@@ -1,6 +1,8 @@
 {
   "name": "cloudoj",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "An online judge",
+  "main": "app.js",
   "private": false,
   "scripts": {
     "start": "node ./bin/www"
@@ -22,11 +24,35 @@
     "jade": "~1.11.0",
     "jsonwebtoken": "^5.4.1",
     "lodash": "^3.10.1",
+    "material-design-icons": "^2.1.1",
+    "mongoose": "^4.3.0",
     "morgan": "~1.6.1",
     "requirejs": "^2.1.22",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.0"
-  }
+    "gulp": "^3.9.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-less": "^3.0.5",
+    "gulp-watch": "^4.3.5",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-clean-css": "^1.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OnWind/CloudOJ.git"
+  },
+  "keywords": [
+    "oj",
+    "ums",
+    "express",
+    "javascript",
+    "mongodb"
+  ],
+  "author": "OnWind",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/OnWind/CloudOJ/issues"
+  },
+  "homepage": "https://github.com/OnWind/CloudOJ#readme"
 }

@@ -1,4 +1,6 @@
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    jade = require('gulp-jade'),
+    watch = require('gulp-watch');
 
 gulp.task('build_dep_js', function() {
   gulp.src([
@@ -28,10 +30,32 @@ gulp.task('build_dep_css', function() {
     .pipe(gulp.dest('public/static'));
 });
 
-gulp.task('build_dependence', [
+gulp.task('dependence', [
   'build_dep_js',
   'build_dep_requirejs',
   'build_dep_css'
 ]);
 
-gulp.task('default', ['build_dependence']);
+gulp.task('jade', function(){
+  gulp.src([
+    'src/**/*.jade'
+  ], { base: 'src' })
+    .pipe(jade({
+      locals: {}
+    }))
+    .pipe(gulp.dest('public/'));
+});
+
+gulp.task('watch', function (cb) {
+  watch('src/**/*.jade', function () {
+    gulp.src([
+      'src/**/*.jade'
+    ], { base: 'src' })
+      .pipe(jade({
+        locals: {}
+      }))
+      .pipe(gulp.dest('public/'));
+  });
+});
+
+gulp.task('default', ['dependence', 'jade']);
