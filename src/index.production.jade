@@ -1,19 +1,19 @@
 doctype html
 html(lang="en")
   head
-    link(rel="stylesheet" href="/static/angular-material/angular-material.min.css")
+    link(rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic")
     meta(name="viewport" content="initial-scale=1")
     
   body(layout="column" ng-controller="AppController")
     script(
-      src="/static/requirejs/require.js"
+      src="//cdn.bootcss.com/require.js/2.1.20/require.min.js"
       defer="" async="true" data-main="./config.require.js")
     
     md-toolbar(layout="row")
       div(class="md-toolbar-tools")
-        h1 
-          span CloudOJ
+        h3 
+          span Hello World
     div(layout="row" flex)
       div(layout="column" flex)
         md-content(layout="column" flex class="md-padding")

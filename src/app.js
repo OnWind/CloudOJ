@@ -5,7 +5,8 @@ define([
     'angular-resource',
     'angular-animate',
     'angular-aria',
-    'angular-material'
+    'angular-material',
+    'angular-sanitize'
 ], function (angular) {
     'use strict';
     return angular.module("ojApp", [
@@ -13,7 +14,8 @@ define([
         "ngResource",
         "ngAria",
         "ngAnimate",
-        "pascalprecht.translate",
-        "ngMaterial"
+        "ngMaterial",
+        "ngSanitize",
+        "pascalprecht.translate"
     ]);
 });
