@@ -4,6 +4,11 @@ var gulp = require('gulp'),
     jade = require('gulp-jade'),
     less = require('gulp-less');
 
+var LessPluginCleanCSS = require('less-plugin-clean-css'),
+    cleanCSSPlugin = new LessPluginCleanCSS({advanced: true});
+var LessPluginAutoPrefix = require('less-plugin-autoprefix'),
+    autoprefixPlugin = new LessPluginAutoPrefix({browsers: ["last 2 versions"]});
+
 gulp.task('dependence:build-js', function() {
   return gulp.src([
     'node_modules/angular/*.min.js',
@@ -41,7 +46,8 @@ gulp.task('dependence', [
 gulp.task('source:less', function() {
   return gulp.src('src/stylesheets/**/*.less')
     .pipe(less({
-      paths: [path.join(__dirname, 'src', 'stylesheets')]
+      paths: [path.join(__dirname, 'src', 'stylesheets')],
+      plugins: [autoprefixPlugin, cleanCSSPlugin]
     }))
     .pipe(gulp.dest('public/stylesheets/'));
 });
