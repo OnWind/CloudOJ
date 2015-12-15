@@ -1,7 +1,10 @@
-var gulp = require('gulp'),
-    jade = require('gulp-jade');
+var path = require('path');
 
-gulp.task('build_dep_js', function() {
+var gulp = require('gulp'),
+    jade = require('gulp-jade'),
+    less = require('gulp-less');
+
+gulp.task('dependence:build-js', function() {
   return gulp.src([
     'node_modules/angular/*.min.js',
     'node_modules/angular-material/*.min.js',
@@ -15,14 +18,14 @@ gulp.task('build_dep_js', function() {
     .pipe(gulp.dest('public/static'));
 });
 
-gulp.task('build_dep_requirejs', function() {
+gulp.task('dependence:build-requirejs', function() {
   return gulp.src([
     'node_modules/requirejs/*.js'
   ], { base: 'node_modules' })
     .pipe(gulp.dest('public/static'));
 });
 
-gulp.task('build_dep_css', function() {
+gulp.task('dependence:build-css', function() {
   return gulp.src([
     'node_modules/angular-material/*.min.css'
   ], { base: 'node_modules' })
@@ -30,12 +33,20 @@ gulp.task('build_dep_css', function() {
 });
 
 gulp.task('dependence', [
-  'build_dep_js',
-  'build_dep_requirejs',
-  'build_dep_css'
+  'dependence:build-js',
+  'dependence:build-requirejs',
+  'dependence:build-css'
 ]);
 
-gulp.task('jade', function(){
+gulp.task('source:less', function() {
+  return gulp.src('src/stylesheets/**/*.less')
+    .pipe(less({
+      paths: [path.join(__dirname, 'src', 'stylesheets')]
+    }))
+    .pipe(gulp.dest('public/stylesheets/'));
+});
+
+gulp.task('source:jade', function(){
   return gulp.src([
     'src/**/*.jade'
   ], { base: 'src' })
@@ -47,7 +58,9 @@ gulp.task('jade', function(){
 
 gulp.task('watch', function () {
   gulp.watch('src/**/*.jade', ['jade']);
+  gulp.watch('src/stylesheets/**/*.less', ['less']);
 });
 
-gulp.task('default', ['dependence', 'jade']);
-gulp.task('dev', ['jade', 'watch']);
+gulp.task('source', ['source:less', 'source:jade']);
+gulp.task('default', ['dependence', 'source']);
+gulp.task('dev', ['source', 'watch']);
