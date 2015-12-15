@@ -20,12 +20,14 @@ router.use('/ums', ums);
 router.use('/search', search);
 
 router.use(function(req, res, next) {
-  res.status(404).json({
+  res.status(404).
+  json({
     "error": {
       message: "not found",
       error: {}
     }
-  }).end();
+  }).
+  end();
 });
 
 module.exports = router;
