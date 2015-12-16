@@ -23,6 +23,14 @@ gulp.task('dependence:build-js', function() {
     .pipe(gulp.dest('public/static'));
 });
 
+gulp.task('dependence:build-font', function() {
+  return gulp.src([
+    'node_modules/material-design-icons/iconfont/*.*'
+  ], { base: 'node_modules' })
+    .pipe(gulp.dest('public/static'));
+
+});
+
 gulp.task('dependence:build-requirejs', function() {
   return gulp.src([
     'node_modules/requirejs/*.js'
@@ -40,7 +48,8 @@ gulp.task('dependence:build-css', function() {
 gulp.task('dependence', [
   'dependence:build-js',
   'dependence:build-requirejs',
-  'dependence:build-css'
+  'dependence:build-css',
+  'dependence:build-font'
 ]);
 
 gulp.task('source:less', function() {
@@ -63,8 +72,8 @@ gulp.task('source:jade', function(){
 });
 
 gulp.task('watch', function () {
-  gulp.watch('src/**/*.jade', ['jade']);
-  gulp.watch('src/stylesheets/**/*.less', ['less']);
+  gulp.watch('src/**/*.jade', ['source:jade']);
+  gulp.watch('src/stylesheets/**/*.less', ['source:less']);
 });
 
 gulp.task('source', ['source:less', 'source:jade']);

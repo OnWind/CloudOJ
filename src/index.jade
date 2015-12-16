@@ -2,20 +2,18 @@ doctype html
 html(lang="en")
   head
     link(rel="stylesheet" href="/static/angular-material/angular-material.min.css")
+    link(rel="stylesheet" href="/stylesheets/main.css")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic")
     meta(name="viewport" content="initial-scale=1")
     
-  body(layout="column" ng-controller="AppController")
+  body(layout="column" ng-controller="AppController" class="ng-cloak")
     script(
       src="/static/requirejs/require.js"
       defer="" async="true" data-main="./config.require.js")
     
-    md-toolbar(layout="row")
-      div(class="md-toolbar-tools")
-        h1
-          span CloudOJ
+    include views/navbar/index.jade
+    
     div(layout="row" flex)
       div(layout="column" flex)
         md-content(layout="column" flex class="md-padding")
           p {{ message }}
-    
