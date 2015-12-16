@@ -1,10 +1,11 @@
 define([
-  'app'
+  'app',
+  './config'
 ], function(app) {
   'use strict';
-  return app.constant('config', {
-    site: {
-      name: "CloudOJ"
-    }
-  });
+  app.config(["$mdThemingProvider", function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('deep-orange')
+      .accentPalette('orange');
+  }]);
 });
