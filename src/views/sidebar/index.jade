@@ -1,0 +1,10 @@
+md-sidenav.md-sidenav-left&attributes({
+  layout: "column",
+  "md-component-id": "left",
+  "md-is-locked-open": "$mdMedia('gt-sm')"
+})
+  div(ng-controller="SidebarController")
+    md-menu-item
+      md-button(ng-href="#/")
+        md-icon(md-menu-align-target) home
+        | Home

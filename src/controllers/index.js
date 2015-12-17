@@ -1,6 +1,8 @@
 define([
   'app',
-  './AppController'
+  './AppController',
+  './NavbarController',
+  './SidebarController'
 ], function(app) {
   'use strict';
   return app;

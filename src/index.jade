@@ -4,16 +4,28 @@ html(lang="en")
     link(rel="stylesheet" href="/static/angular-material/angular-material.min.css")
     link(rel="stylesheet" href="/stylesheets/main.css")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic")
-    meta(name="viewport" content="initial-scale=1")
+    meta(charset="utf-8")
+    meta&attributes({
+      name: "viewport",
+      content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    })
+    meta(name="author" content="SkyZH, OnWind Team")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="renderer" content="webkit")
+    meta(name="robots" content="index,follow")
+    title {{config.site.name}}
+
     
   body(layout="column" ng-controller="AppController" class="ng-cloak")
     script(
       src="/static/requirejs/require.js"
-      defer="" async="true" data-main="./config.require.js")
+      defer async="true" data-main="./config.require.js")
     
     include views/navbar/index.jade
     
     div(layout="row" flex)
-      div(layout="column" flex)
-        md-content(layout="column" flex class="md-padding")
-          p {{ message }}
+      include views/sidebar/index.jade
+      
+      div.content(layout="column" flex)
+        md-content.md-padding(layout="column" flex)
+          p {{message}}

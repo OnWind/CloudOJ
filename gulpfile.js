@@ -2,7 +2,8 @@ var path = require('path');
 
 var gulp = require('gulp'),
     jade = require('gulp-jade'),
-    less = require('gulp-less');
+    less = require('gulp-less'),
+    plumber = require('gulp-plumber');
 
 var LessPluginCleanCSS = require('less-plugin-clean-css'),
     cleanCSSPlugin = new LessPluginCleanCSS({advanced: true});
@@ -54,6 +55,7 @@ gulp.task('dependence', [
 
 gulp.task('source:less', function() {
   return gulp.src('src/stylesheets/**/*.less')
+    .pipe(plumber())
     .pipe(less({
       paths: [path.join(__dirname, 'src', 'stylesheets')],
       plugins: [autoprefixPlugin, cleanCSSPlugin]
@@ -65,6 +67,7 @@ gulp.task('source:jade', function(){
   return gulp.src([
     'src/**/*.jade'
   ], { base: 'src' })
+    .pipe(plumber())
     .pipe(jade({
       locals: {}
     }))
