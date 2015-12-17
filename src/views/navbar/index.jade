@@ -1,4 +1,5 @@
 md-toolbar(layout="row")
-  div(class="md-toolbar-tools")
-    h1
-      span {{ config.site.name }}
+  div.md-toolbar-tools
+    md-button.md-icon-button(ng-click="toggleSidenav('left')" hide-gt-sm)
+      md-icon menu
+    h1 {{config.site.name}}
