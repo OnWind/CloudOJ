@@ -6,7 +6,7 @@ md-sidenav.md-sidenav-left&attributes({
   div(ng-controller="SidebarController")
     md-menu-item.menu-header
       p Avatar
-    md-menu-item
-      md-button(ng-href="#/")
-        md-icon(md-menu-align-target) home
-        | Home
+    md-menu-item(ng-repeat="item in menuItems")
+      md-button(ng-href="#/{{item.url}}")
+        md-icon(md-menu-align-target) {{item.icon}}
+        | {{item.name | translate}}
