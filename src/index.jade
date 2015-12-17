@@ -13,13 +13,14 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="renderer" content="webkit")
     meta(name="robots" content="index,follow")
-    title {{config.site.name}}
+    title {{'SITE_NAME' | translate}}
 
     
   body(layout="row" ng-controller="AppController" class="ng-cloak")
     script(
       src="/static/requirejs/require.js"
-      defer async="true" data-main="./config.require.js")
+      defer async="true" data-main="./config.require.js"
+    )
     
     include views/sidebar/index.jade
     
