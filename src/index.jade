@@ -16,15 +16,15 @@ html(lang="en")
     title {{config.site.name}}
 
     
-  body(layout="column" ng-controller="AppController" class="ng-cloak")
+  body(layout="row" ng-controller="AppController" class="ng-cloak")
     script(
       src="/static/requirejs/require.js"
       defer async="true" data-main="./config.require.js")
     
-    include views/navbar/index.jade
+    include views/sidebar/index.jade
     
-    div(layout="row" flex)
-      include views/sidebar/index.jade
+    div(layout="column" flex)
+      include views/navbar/index.jade
       
       div.content(layout="column" flex)
         md-content.md-padding(layout="column" flex)
