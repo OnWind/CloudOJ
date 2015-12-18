@@ -4,7 +4,7 @@ define([
     return {
         'SITE_NAME': 'CloudOJ',
         /* Sidebar Navigation */
-        'SIDEBAR_SEARCH': '在 %s 上搜索',
+        'SIDEBAR_SEARCH': '在 {{site}} 上搜索',
         'SIDEBAR_HOME' : '首页',
         'SIDEBAR_PROBLEM': '试题',
         'SIDEBAR_CONTEST': '竞赛',

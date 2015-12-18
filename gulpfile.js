@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     jade = require('gulp-jade'),
     less = require('gulp-less'),
     plumber = require('gulp-plumber'),
-    nodemon = require('gulp-nodemon');
+    nodemon = require('gulp-nodemon'),
+    livereload = require('gulp-livereload');
 
 var LessPluginCleanCSS = require('less-plugin-clean-css'),
     cleanCSSPlugin = new LessPluginCleanCSS({advanced: true});
@@ -61,7 +62,8 @@ gulp.task('source:less', function() {
       paths: [path.join(__dirname, 'src', 'stylesheets')],
       plugins: [autoprefixPlugin, cleanCSSPlugin]
     }))
-    .pipe(gulp.dest('public/stylesheets/'));
+    .pipe(gulp.dest('public/stylesheets/'))
+    .pipe(livereload());
 });
 
 gulp.task('source:jade', function(){
@@ -72,7 +74,16 @@ gulp.task('source:jade', function(){
     .pipe(jade({
       locals: {}
     }))
-    .pipe(gulp.dest('public/'));
+    .pipe(gulp.dest('public/'))
+    .pipe(livereload());
+});
+
+gulp.task('source:javascript', function(){
+  return gulp.src([
+    'src/**/*.js'
+  ], { base: 'src' })
+    .pipe(plumber())
+    .pipe(livereload());
 });
 
 gulp.task('development:server', function() {
@@ -91,8 +102,10 @@ gulp.task('development:server', function() {
 });
 
 gulp.task('development:watch', function () {
+  livereload.listen();
   gulp.watch('src/**/*.jade', ['source:jade']);
   gulp.watch('src/stylesheets/**/*.less', ['source:less']);
+  gulp.watch('src/**/*.js', ['source:javascript']);
 });
 
 gulp.task('source', ['source:less', 'source:jade']);

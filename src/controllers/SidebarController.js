@@ -3,11 +3,14 @@ define([
 ], function(app) {
   'use strict';
   return app.controller('SidebarController', [
-    "$scope",
-    function($scope) {
+    "$scope", "$translate",
+    function($scope, $translate) {
       $scope.user = {
         avatar: "/images/avatar.jpg"
       };
+      $translate('SITE_NAME').then(function(translation) {
+        $scope.site = translation;
+      });
       $scope.menus = [
         {
           items: [

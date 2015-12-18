@@ -10,22 +10,23 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
           div.user-avatar(style="background-image: url({{user.avatar}})")
         div(flex)
           div SkyZH
-
     md-list
       md-menu-item
         md-button
-          md-input-container.md-block(md-no-float)
-            md-icon.md-primary(md-menu-align-target) search
-            input(ng-model="search" type="text" placeholder=" {{'SIDEBAR_SEARCH' | translate}}")
+          md-icon.md-warn(md-menu-align-target) search
+          span&attributes({
+            translate: "SIDEBAR_SEARCH",
+            "translate-value-site": "{{'SITE_NAME' | translate}}"
+          })
       div(ng-repeat="menu in menus")
         md-subheader&attributes({
-          'ng-show': "menu.subheader"
+          'ng-if': "menu.subheader"
         })
-          {{ menu.subheader | translate }}
+          {{menu.subheader | translate}}
         md-menu-item(ng-repeat="item in menu.items")
           md-button(ng-href="#/{{item.url}}")
             md-icon(ng-class="'md-' + item.icon_class" md-menu-align-target) {{item.icon}}
             | {{item.name | translate}}
         md-divider
       md-menu-item
-        p: small Powered by CloudOJ
+        p: small 由 CloudOJ 强力驱动

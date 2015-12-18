@@ -5,4 +5,15 @@ md-toolbar(layout="row" ng-controller="NavbarController")
       "hide-gt-sm": ""
     })
       md-icon menu
-    h1 {{'SITE_NAME' | translate}} > Home
+    h1.md-breadcrumb
+      span(hide show-gt-md)
+        span{{'SITE_NAME' | translate}}
+        md-icon.md-ch chevron_right
+      span(hide show-gt-sm)
+        span Problems
+        md-icon chevron_right
+      span(hide show-gt-xs)
+        span 1000 A+B Problem
+        md-icon chevron_right
+      span Submit
+      

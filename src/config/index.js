@@ -5,8 +5,8 @@ define([
   'use strict';
   app.config(["$mdThemingProvider", function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-      .primaryPalette('blue')
-      .accentPalette('cyan')
+      .primaryPalette('orange')
+      .accentPalette('lime')
       .backgroundPalette('grey');
   }]);
 });

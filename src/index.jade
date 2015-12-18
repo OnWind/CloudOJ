@@ -1,8 +1,8 @@
 doctype html
 html(lang="en")
   head
-    link(rel="stylesheet" href="/static/angular-material/angular-material.min.css")
     link(rel="stylesheet" href="/stylesheets/main.css")
+    link(rel="stylesheet" href="/static/angular-material/angular-material.min.css")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic")
     meta(charset="utf-8")
     meta&attributes({
@@ -26,5 +26,4 @@ html(lang="en")
     
     div(layout="column" flex)
       include views/navbar/index.jade
-      
-      ng-view.content(layout="column" flex)
+      md-content(ng-view flex md-scroll-y)
