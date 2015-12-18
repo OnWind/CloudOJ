@@ -78,7 +78,7 @@ gulp.task('source:jade', function(){
 gulp.task('development:server', function() {
   nodemon({
     verbose: true,
-    script: 'app.js',
+    script: './bin/www',
     ext: 'js',
     watch: './routes',
     env: {

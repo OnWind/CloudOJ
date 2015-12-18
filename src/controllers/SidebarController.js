@@ -17,30 +17,30 @@ define([
           }, {
               'url': 'Problem',
               'name': 'SIDEBAR_PROBLEM',
-              'icon': 'help'
+              'icon': 'apps'
           }, {
               'url': 'Help',
               'name': 'SIDEBAR_CONTEST',
-              'icon': 'help'
+              'icon': 'today'
+          }, {
+              'url': 'Help',
+              'name': 'SIDEBAR_STATUS',
+              'icon': 'update'
           }, {
               'url': 'Help',
               'name': 'SIDEBAR_DISCUSS',
               'icon': 'forum'
           }, {
               'url': 'Help',
-              'name': 'SIDEBAR_STATUS',
-              'icon': 'list'
-          }, {
-              'url': 'Help',
               'name': 'SIDEBAR_RANK',
-              'icon': 'rank'
+              'icon': 'trending_up'
           }],
           middle: {
             login: [
               {
                 'url': 'Help',
                 'name': 'SIDEBAR_PROFILE',
-                'icon': 'help'
+                'icon': 'account_box'
               }, {
                 'url': 'Help',
                 'name': 'SIDEBAR_INBOX',
@@ -52,18 +52,18 @@ define([
               }, {
                 'url': 'Help',
                 'name': 'SIDEBAR_LOGOUT',
-                'icon': 'exit'
+                'icon': 'exit_to_app'
               }
             ],
             logout: [
               {
                 'url': 'Help',
                 'name': 'SIDEBAR_REGISTER',
-                'icon': 'help'
+                'icon': 'open_in_new'
               }, {
                 'url': 'Help',
                 'name': 'SIDEBAR_LOGIN',
-                'icon': 'help'
+                'icon': 'input'
               }
             ]
           },
@@ -71,11 +71,11 @@ define([
             {
               'url': 'help/about',
               'name': 'SIDEBAR_ABOUT',
-              'icon': 'help'
+              'icon': 'info'
             }, {
               'url': 'Help',
               'name': 'SIDEBAR_TOS',
-              'icon': 'help'
+              'icon': 'assignment'
             }, {
               'url': 'Help',
               'name': 'SIDEBAR_HELP',
@@ -87,7 +87,7 @@ define([
             }, {
               'url': 'Help',
               'name': 'SIDEBAR_LANGUAGE',
-              'icon': 'help'
+              'icon': 'language'
             }
           ]
         };

@@ -22,7 +22,7 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
           | {{item.name | translate}}
       md-divider
       md-subheader {{ 'SIDEBAR_PERSONAL' | translate }}
-      md-menu-item(ng-repeat="item in menuItems.middle.logout")
+      md-menu-item(ng-repeat="item in menuItems.middle.login")
         md-button(ng-href="#/{{item.url}}")
           md-icon(md-menu-align-target) {{item.icon}}
           | {{item.name | translate}} 
