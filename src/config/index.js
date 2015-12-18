@@ -6,6 +6,7 @@ define([
   app.config(["$mdThemingProvider", function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
       .primaryPalette('blue')
-      .accentPalette('cyan');
+      .accentPalette('cyan')
+      .backgroundPalette('grey');
   }]);
 });

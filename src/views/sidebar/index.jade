@@ -13,23 +13,19 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
 
     md-list
       md-menu-item
-        md-button(ng-href="#/search")
-          md-icon(md-menu-align-target) search
-      md-divider
-      md-menu-item(ng-repeat="item in menuItems.top")
-        md-button(ng-href="#/{{item.url}}")
-          md-icon(md-menu-align-target) {{item.icon}}
-          | {{item.name | translate}}
-      md-divider
-      md-subheader {{ 'SIDEBAR_PERSONAL' | translate }}
-      md-menu-item(ng-repeat="item in menuItems.middle.login")
-        md-button(ng-href="#/{{item.url}}")
-          md-icon(md-menu-align-target) {{item.icon}}
-          | {{item.name | translate}} 
-      md-divider
-      md-subheader {{ 'SIDEBAR_WEBSITE' | translate }}
-      md-menu-item(ng-repeat="item in menuItems.bottom")
-        md-button(ng-href="#/{{item.url}}")
-          md-icon(md-menu-align-target) {{item.icon}}
-          | {{item.name | translate}}      
-      
+        md-button
+          md-input-container.md-block(md-no-float)
+            md-icon.md-primary(md-menu-align-target) search
+            input(ng-model="search" type="text" placeholder=" {{'SIDEBAR_SEARCH' | translate}}")
+      div(ng-repeat="menu in menus")
+        md-subheader&attributes({
+          'ng-show': "menu.subheader"
+        })
+          {{ menu.subheader | translate }}
+        md-menu-item(ng-repeat="item in menu.items")
+          md-button(ng-href="#/{{item.url}}")
+            md-icon(ng-class="'md-' + item.icon_class" md-menu-align-target) {{item.icon}}
+            | {{item.name | translate}}
+        md-divider
+      md-menu-item
+        p: small Powered by CloudOJ
