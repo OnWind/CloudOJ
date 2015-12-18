@@ -3,8 +3,8 @@ define([
 ], function(app) {
   'use strict';
   return app.controller('HomeController', [
-    "$scope", "message",
-    function($scope, message) {
+    "$scope",
+    function($scope) {
       $scope.messages = [
         "Hello!",
         "Welcome!",

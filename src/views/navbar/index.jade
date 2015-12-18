@@ -6,14 +6,19 @@ md-toolbar.md-whiteframe-z1(layout="row" ng-controller="NavbarController")
     })
       md-icon menu
     h1.md-breadcrumb
-      span(hide show-gt-md)
-        span{{'SITE_NAME' | translate}}
-        md-icon.md-ch chevron_right
-      span(hide show-gt-sm)
-        span Problems
-        md-icon chevron_right
-      span(hide show-gt-xs)
-        span 1000 A+B Problem
-        md-icon chevron_right
-      span Submit
-      
+      span(ng-repeat="route in routes")
+        mixin navTemplate
+          span(ng-if="route.i18n") {{route.route + '_TITLE' | translate}}
+          span(ng-if="!route.i18n") {{route.route}}
+        span(ng-switch="routes.length - $index - 1")
+          span(ng-switch-when="0")
+            +navTemplate
+          span(hide show-gt-xs ng-switch-when="1")
+            +navTemplate
+            md-icon chevron_right
+          span(hide show-gt-sm ng-switch-when="2")
+            +navTemplate
+            md-icon chevron_right
+          span(hide show-gt-md ng-switch-default)
+            +navTemplate
+            md-icon chevron_right

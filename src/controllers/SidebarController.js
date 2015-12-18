@@ -15,30 +15,30 @@ define([
         {
           items: [
             {
-                'url': 'Home',
+                'url': 'home',
                 'name': 'SIDEBAR_HOME',
                 'icon': 'home',
                 'icon_class': 'primary'
             }, {
-                'url': 'Problem',
+                'url': 'problem',
                 'name': 'SIDEBAR_PROBLEM',
                 'icon': 'apps',
                 'icon_class': 'primary'
             }, {
-                'url': 'Help',
+                'url': 'contest',
                 'name': 'SIDEBAR_CONTEST',
                 'icon': 'today',
                 'icon_class': 'primary'
             }, {
-                'url': 'Help',
+                'url': 'status',
                 'name': 'SIDEBAR_STATUS',
                 'icon': 'update'
             }, {
-                'url': 'Help',
+                'url': 'discuss',
                 'name': 'SIDEBAR_DISCUSS',
                 'icon': 'forum'
             }, {
-                'url': 'Help',
+                'url': 'rank',
                 'name': 'SIDEBAR_RANK',
                 'icon': 'trending_up'
             }
@@ -47,28 +47,28 @@ define([
           subheader: "SIDEBAR_PERSONAL",
           items: [
             {
-              'url': 'Help',
+              'url': 'profile',
               'name': 'SIDEBAR_PROFILE',
               'icon': 'account_box'
             }, {
-              'url': 'Help',
+              'url': 'help',
               'name': 'SIDEBAR_INBOX',
               'icon': 'chat'
             }, {
-              'url': 'Help',
+              'url': 'setting',
               'name': 'SIDEBAR_SETTING',
               'icon': 'settings'
             }, {
-              'url': 'Help',
+              'url': 'user/logout',
               'name': 'SIDEBAR_LOGOUT',
               'icon': 'exit_to_app',
               'icon_class': 'md-primary'
             }, {
-              'url': 'Help',
+              'url': 'user/register',
               'name': 'SIDEBAR_REGISTER',
               'icon': 'open_in_new'
             }, {
-              'url': 'Help',
+              'url': 'user/login',
               'name': 'SIDEBAR_LOGIN',
               'icon': 'input'
             }
@@ -81,19 +81,19 @@ define([
               'name': 'SIDEBAR_ABOUT',
               'icon': 'info'
             }, {
-              'url': 'Help',
+              'url': 'help/tos',
               'name': 'SIDEBAR_TOS',
               'icon': 'assignment'
             }, {
-              'url': 'Help',
+              'url': 'help',
               'name': 'SIDEBAR_HELP',
               'icon': 'help'
             }, {
-              'url': 'Help',
+              'url': 'help/feedback',
               'name': 'SIDEBAR_FEEDBACK',
               'icon': 'feedback'
             }, {
-              'url': 'Help',
+              'url': 'locale',
               'name': 'SIDEBAR_LANGUAGE',
               'icon': 'language'
             }

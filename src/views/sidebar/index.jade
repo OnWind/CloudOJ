@@ -12,8 +12,8 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
           div SkyZH
     md-list
       md-menu-item
-        md-button
-          md-icon.md-warn(md-menu-align-target) search
+        md-button(ng-href="#/search")
+          md-icon.md-primary.md-hue-2(md-menu-align-target) search
           span&attributes({
             translate: "SIDEBAR_SEARCH",
             "translate-value-site": "{{'SITE_NAME' | translate}}"
@@ -29,4 +29,4 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
             | {{item.name | translate}}
         md-divider
       md-menu-item
-        p: small 由 CloudOJ 强力驱动
+        p: small {{'SIDEBAR_POWERED_BY_CLOUDOJ' | translate}}

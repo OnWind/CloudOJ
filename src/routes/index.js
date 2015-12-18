@@ -6,22 +6,35 @@ define([
     "$routeProvider",
     function($routeProvider) {
       $routeProvider
-      .when('/', {
+      .when('/home', {
         templateUrl: "views/home/",
         controller: "HomeController",
         resolve: {
-          message: function(){return "Hello, CloudOJ";}
+          routes: function() { return [{i18n: true, route: 'HOME'}]; }
+        }
+      })
+      .when('/home/submit', {
+        templateUrl: "views/home/",
+        controller: "HomeController",
+        resolve: {
+          routes: function() { return [
+            {i18n: true, route: 'HOME'},
+            {i18n: true, route: 'DISCUSS'},
+            {i18n: true, route: 'DISCUSS'},
+            {i18n: true, route: 'DISCUSS'},
+            {i18n: false, route: 'A+B Problem'}
+          ]; }
         }
       })
       .when('/help/about', {
         templateUrl: "views/home/",
         controller: "HomeController",
         resolve: {
-          message: function(){return "Hello, SkyZH";}
+          routes: function(){ return [{i18n: true, route: 'ABOUT'}]; }
         }
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/home'
       });
     }
   ]);

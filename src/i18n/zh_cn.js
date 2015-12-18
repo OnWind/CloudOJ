@@ -26,6 +26,8 @@ define([
         'SIDEBAR_LOGOUT': '注销',
         'SIDEBAR_SETTING': '设置',
         'SIDEBAR_PERSONAL': '个人',
+        /* Sidebar Footer */
+        'SIDEBAR_POWERED_BY_CLOUDOJ': '由 CloudOJ 强力驱动',
         /* Home */
         'HOME_TITLE': '首页',
         /* Problem */
@@ -52,6 +54,8 @@ define([
         'HELP_TITLE': '帮助',
         /* Inbox */
         'INBOX_TITLE': '通知',
+        /* About */
+        'ABOUT_TITLE': '关于',
         /* Dialogs */
         'CARD_DONE': '好的',
         'CARD_DISMISS': '忽略'
