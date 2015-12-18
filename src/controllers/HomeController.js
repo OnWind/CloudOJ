@@ -5,7 +5,17 @@ define([
   return app.controller('HomeController', [
     "$scope", "message",
     function($scope, message) {
-      $scope.message = message;
+      $scope.messages = [
+        "Hello!",
+        "Welcome!",
+        "This is CloudOJ!!",
+        "Hello!!",
+        "Welcome!!",
+        "This is CloudOJ!",
+        "Hello!!!",
+        "Welcome!!!",
+        "This is CloudOJ!!!"
+      ];
     }
   ]);
 });

@@ -24,6 +24,4 @@ html(lang="en")
     
     include views/sidebar/index.jade
     
-    div(layout="column" flex)
-      include views/navbar/index.jade
-      md-content(ng-view flex md-scroll-y)
+    div(layout="column" flex ng-view)
