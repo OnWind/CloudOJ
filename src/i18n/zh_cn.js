@@ -17,6 +17,7 @@ define([
         'SIDEBAR_FEEDBACK': '反馈',
         'SIDEBAR_TOS': '用户许可协议',
         'SIDEBAR_LANGUAGE': 'English',
+        'SIDEBAR_WEBSITE': '关于',
         /* Sidebar Personal */
         'SIDEBAR_PROFILE': '资料',
         'SIDEBAR_INBOX': '通知',
@@ -24,6 +25,7 @@ define([
         'SIDEBAR_REGISTER': '注册',
         'SIDEBAR_LOGOUT': '注销',
         'SIDEBAR_SETTING': '设置',
+        'SIDEBAR_PERSONAL': '个人',
         /* Home */
         'HOME_TITLE': '首页',
         /* Problem */

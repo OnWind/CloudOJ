@@ -1,12 +1,35 @@
-md-sidenav.md-sidenav-left&attributes({
+md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
   layout: "column",
   "md-component-id": "left",
   "md-is-locked-open": "$mdMedia('gt-sm')"
 })
   div(ng-controller="SidebarController")
-    md-menu-item.menu-header
-      p Avatar
-    md-menu-item(ng-repeat="item in menuItems")
-      md-button(ng-href="#/{{item.url}}")
-        md-icon(md-menu-align-target) {{item.icon}}
-        | {{item.name | translate}}
+    md-toolbar.md-tall.md-hue-2.menu-header
+      div.md-toolbar-tools-bottom.inset(layout="row")
+        div(flex)
+          div.user-avatar(style="background-image: url({{user.avatar}})")
+        div(flex)
+          div SkyZH
+
+    md-list
+      md-menu-item
+        md-button(ng-href="#/search")
+          md-icon(md-menu-align-target) search
+      md-divider
+      md-menu-item(ng-repeat="item in menuItems.top")
+        md-button(ng-href="#/{{item.url}}")
+          md-icon(md-menu-align-target) {{item.icon}}
+          | {{item.name | translate}}
+      md-divider
+      md-subheader {{ 'SIDEBAR_PERSONAL' | translate }}
+      md-menu-item(ng-repeat="item in menuItems.middle.logout")
+        md-button(ng-href="#/{{item.url}}")
+          md-icon(md-menu-align-target) {{item.icon}}
+          | {{item.name | translate}} 
+      md-divider
+      md-subheader {{ 'SIDEBAR_WEBSITE' | translate }}
+      md-menu-item(ng-repeat="item in menuItems.bottom")
+        md-button(ng-href="#/{{item.url}}")
+          md-icon(md-menu-align-target) {{item.icon}}
+          | {{item.name | translate}}      
+      
