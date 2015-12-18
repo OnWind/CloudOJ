@@ -7,7 +7,6 @@ define([
     "$rootScope",
     "config",
     function($scope, $rootScope, config) {
-      $scope.message = "Hello, SkyZH!";
       $rootScope.config = config;
     }
   ]);

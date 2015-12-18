@@ -27,6 +27,4 @@ html(lang="en")
     div(layout="column" flex)
       include views/navbar/index.jade
       
-      div.content(layout="column" flex)
-        md-content.md-padding(layout="column" flex)
-          p {{message}}
+      ng-view.content(layout="column" flex)

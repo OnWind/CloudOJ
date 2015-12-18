@@ -69,7 +69,7 @@ define([
           },
           bottom: [
             {
-              'url': 'Help',
+              'url': 'help/about',
               'name': 'SIDEBAR_ABOUT',
               'icon': 'help'
             }, {

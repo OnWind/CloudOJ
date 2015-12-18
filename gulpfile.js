@@ -3,7 +3,8 @@ var path = require('path');
 var gulp = require('gulp'),
     jade = require('gulp-jade'),
     less = require('gulp-less'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    nodemon = require('gulp-nodemon');
 
 var LessPluginCleanCSS = require('less-plugin-clean-css'),
     cleanCSSPlugin = new LessPluginCleanCSS({advanced: true});
@@ -74,11 +75,26 @@ gulp.task('source:jade', function(){
     .pipe(gulp.dest('public/'));
 });
 
-gulp.task('watch', function () {
+gulp.task('development:server', function() {
+  nodemon({
+    verbose: true,
+    script: 'app.js',
+    ext: 'js',
+    watch: './routes',
+    env: {
+        'DEBUG': 'cloudoj:*'
+    }
+  })
+  .on('restart', function () {
+    console.log('Server restarted.');
+  });
+});
+
+gulp.task('development:watch', function () {
   gulp.watch('src/**/*.jade', ['source:jade']);
   gulp.watch('src/stylesheets/**/*.less', ['source:less']);
 });
 
 gulp.task('source', ['source:less', 'source:jade']);
 gulp.task('default', ['dependence', 'source']);
-gulp.task('dev', ['source', 'watch']);
+gulp.task('dev', ['source', 'development:watch', 'development:server']);
