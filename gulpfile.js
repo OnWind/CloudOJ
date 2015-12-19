@@ -14,37 +14,37 @@ var LessPluginAutoPrefix = require('less-plugin-autoprefix'),
 
 gulp.task('dependence:build-js', function() {
   return gulp.src([
-    'node_modules/angular/*.min.js',
-    'node_modules/angular-material/*.min.js',
-    'node_modules/angular-aria/*.min.js',
-    'node_modules/angular-animate/*.min.js',
-    'node_modules/angular-resource/*.min.js',
-    'node_modules/angular-route/*.min.js',
-    'node_modules/angular-sanitize/*.min.js',
-    'node_modules/angular-translate/dist/*.min.js'
-  ], { base: 'node_modules' })
+    'bower_components/angular/*.min.js',
+    'bower_components/angular-material/*.min.js',
+    'bower_components/angular-aria/*.min.js',
+    'bower_components/angular-animate/*.min.js',
+    'bower_components/angular-resource/*.min.js',
+    'bower_components/angular-route/*.min.js',
+    'bower_components/angular-sanitize/*.min.js',
+    'bower_components/angular-translate/*.min.js'
+  ], { base: 'bower_components' })
     .pipe(gulp.dest('public/static'));
 });
 
 gulp.task('dependence:build-font', function() {
   return gulp.src([
-    'node_modules/material-design-icons/iconfont/*.*'
-  ], { base: 'node_modules' })
+    'bower_components/material-design-icons/iconfont/*.*'
+  ], { base: 'bower_components' })
     .pipe(gulp.dest('public/static'));
 
 });
 
 gulp.task('dependence:build-requirejs', function() {
   return gulp.src([
-    'node_modules/requirejs/*.js'
-  ], { base: 'node_modules' })
+    'bower_components/requirejs/*.js'
+  ], { base: 'bower_components' })
     .pipe(gulp.dest('public/static'));
 });
 
 gulp.task('dependence:build-css', function() {
   return gulp.src([
-    'node_modules/angular-material/*.min.css'
-  ], { base: 'node_modules' })
+    'bower_components/angular-material/*.min.css'
+  ], { base: 'bower_components' })
     .pipe(gulp.dest('public/static'));
 });
 

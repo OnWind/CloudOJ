@@ -3,7 +3,8 @@ node_js:
   - "5.3"
   - "4.2"
 before_script:
-  - npm install -g gulp
+  - npm install -g gulp bower
+  - bower install
 before_install:
   - npm install -g node-gyp
 env:
@@ -16,4 +17,3 @@ addons:
       - g++-4.8
 os:
   - linux
-  - osx

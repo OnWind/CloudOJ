@@ -1,0 +1,37 @@
+{
+  "name": "cloudoj",
+  "description": "An online judge",
+  "main": "app.js",
+  "authors": [
+    "OnWind"
+  ],
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "oj",
+    "ums",
+    "express",
+    "javascript",
+    "mongodb"
+  ],
+  "homepage": "https://github.com/OnWind/CloudOJ",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.x",
+    "angular-animate": "~1.4.x",
+    "angular-aria": "~1.4.x",
+    "angular-material": "~1.0.x",
+    "angular-resource": "~1.4.x",
+    "angular-route": "~1.4.x",
+    "angular-sanitize": "~1.4.x",
+    "angular-translate": "~2.8.x",
+    "requirejs": "~2.1.x",
+    "material-design-icons": "~2.1.x"
+  }
+}

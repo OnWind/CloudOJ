@@ -4,7 +4,7 @@ require.config({
         "app-bootstrap": "app-bootstrap",
         "angular": "/static/angular/angular.min",
         "angular-route": "/static/angular-route/angular-route.min",
-        "angular-translate": "/static/angular-translate/dist/angular-translate.min",
+        "angular-translate": "/static/angular-translate/angular-translate.min",
         "angular-resource": "/static/angular-resource/angular-resource.min",
         "angular-aria": "/static/angular-aria/angular-aria.min",
         "angular-animate": "/static/angular-animate/angular-animate.min",
