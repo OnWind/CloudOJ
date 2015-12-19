@@ -56,13 +56,13 @@ gulp.task('dependence', [
 ]);
 
 gulp.task('source:less', function() {
-  return gulp.src('src/stylesheets/**/*.less')
+  return gulp.src('src/**/*.less')
     .pipe(plumber())
     .pipe(less({
       paths: [path.join(__dirname, 'src', 'stylesheets')],
       plugins: [autoprefixPlugin, cleanCSSPlugin]
     }))
-    .pipe(gulp.dest('public/stylesheets/'))
+    .pipe(gulp.dest('public/'))
     .pipe(livereload());
 });
 
