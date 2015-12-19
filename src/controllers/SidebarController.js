@@ -3,14 +3,20 @@ define([
 ], function(app) {
   'use strict';
   return app.controller('SidebarController', [
-    "$scope", "$translate",
-    function($scope, $translate) {
+    "$scope", "$translate", "$mdDialog",
+    function($scope, $translate, $mdDialog) {
       $scope.user = {
         avatar: "/images/avatar.jpg"
       };
-      $translate('SITE_NAME').then(function(translation) {
-        $scope.site = translation;
-      });
+      $scope.showSearch = function(ev) {
+        $mdDialog.show({
+          controller: "SearchController",
+          templateUrl: 'views/search/index.html',
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose: true
+        });
+      };
       $scope.menus = [
         {
           items: [

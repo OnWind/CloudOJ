@@ -7,14 +7,14 @@ define([
     function($routeProvider) {
       $routeProvider
       .when('/home', {
-        templateUrl: "views/home/",
+        templateUrl: "views/home/index.html",
         controller: "HomeController",
         resolve: {
           routes: function() { return [{i18n: true, route: 'HOME'}]; }
         }
       })
       .when('/home/submit', {
-        templateUrl: "views/home/",
+        templateUrl: "views/home/index.html",
         controller: "HomeController",
         resolve: {
           routes: function() { return [
@@ -27,7 +27,7 @@ define([
         }
       })
       .when('/help/about', {
-        templateUrl: "views/home/",
+        templateUrl: "views/home/index.html",
         controller: "HomeController",
         resolve: {
           routes: function(){ return [{i18n: true, route: 'ABOUT'}]; }

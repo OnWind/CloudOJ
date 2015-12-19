@@ -3,7 +3,8 @@ define([
   './AppController',
   './NavbarController',
   './SidebarController',
-  './HomeController'
+  './HomeController',
+  './SearchController'
 ], function(app) {
   'use strict';
   return app;

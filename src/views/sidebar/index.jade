@@ -15,7 +15,7 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
           div(flex): md-progress-linear(md-mode="determinate" value="40")
     md-list
       md-menu-item
-        md-button(ng-href="#/search")
+        md-button(ng-click="showSearch($event)")
           md-icon.md-primary.md-hue-2(md-menu-align-target) search
           span&attributes({
             translate: "SIDEBAR_SEARCH",
