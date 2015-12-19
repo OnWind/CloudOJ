@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-var user = require('./user/index');
-var problem = require('./problem/index');
-var contest = require('./contest/index');
-var discuss = require('./discuss/index');
-var status = require('./status/index');
-var help = require('./help/index');
-var ums = require('./ums/index');
-var search = require('./search/index');
+var user = require('./user');
+var problem = require('./problem');
+var contest = require('./contest');
+var discuss = require('./discuss');
+var status = require('./status');
+var help = require('./help');
+var ums = require('./ums');
+var search = require('./search');
 
 router.use('/user', user);
 router.use('/problem', problem);

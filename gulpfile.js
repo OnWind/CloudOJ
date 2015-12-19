@@ -108,6 +108,21 @@ gulp.task('development:watch', function () {
   gulp.watch('src/**/*.js', ['source:javascript']);
 });
 
+gulp.task('production:javascript', function() {
+  return gulp.src([
+    'src/**/*.js'
+  ], { base: 'src/' })
+    .pipe(gulp.dest('public/'));
+});
+
+gulp.task('production:source', ['source', 'production:javascript'], function() {
+  return gulp.src([
+    'public/production/**/*'
+  ], { base: 'public/production' })
+    .pipe(gulp.dest('public/'));
+});
+
 gulp.task('source', ['source:less', 'source:jade']);
 gulp.task('default', ['dependence', 'source']);
 gulp.task('dev', ['source', 'development:watch', 'development:server']);
+gulp.task('production', ['production:source']);

@@ -8,7 +8,7 @@ require.config({
         "angular-resource": "//cdn.bootcss.com/angular.js/1.4.8/angular-resource.min",
         "angular-aria": "//cdn.bootcss.com/angular.js/1.4.8/angular-aria.min",
         "angular-animate": "//cdn.bootcss.com/angular.js/1.4.8/angular-animate.min",
-        "angular-material": "//cdn.bootcss.com/angular-material/1.0.0-rc7/angular-material.min"
+        "angular-material": "//cdn.bootcss.com/angular-material/1.0.1/angular-material.min.js"
     },
     shim: {
         "angular": {
