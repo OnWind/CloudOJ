@@ -3,7 +3,9 @@ node_js:
   - "4.1"
   - "4.0"
 before_script:
-  - npm install -g gulp node-gyp
+  - npm install -g gulp
+before_install:
+  - npm install -g node-gyp
 env:
   - CXX=g++-4.8
 addons:
