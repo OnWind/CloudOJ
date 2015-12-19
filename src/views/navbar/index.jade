@@ -6,11 +6,11 @@ md-toolbar.md-whiteframe-z1(layout="row" ng-controller="NavbarController")
     })
       md-icon menu
     h1.md-breadcrumb
-      span(ng-repeat="route in routes")
+      div(ng-repeat="route in routes")
         mixin navTemplate
           span(ng-if="route.i18n") {{route.route + '_TITLE' | translate}}
           span(ng-if="!route.i18n") {{route.route}}
-        span(ng-switch="routes.length - $index - 1")
+        div(ng-switch="routes.length - $index - 1")
           span(ng-switch-when="0")
             +navTemplate
           span(hide show-gt-xs ng-switch-when="1")

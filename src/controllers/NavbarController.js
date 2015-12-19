@@ -8,7 +8,10 @@ define([
       $scope.toggleSidenav = function() {
         $mdSidenav("left").toggle();
       };
-      $scope.routes = $route.current.locals.routes;
+      $scope.__routes = $route.current.locals.routes;
+      $scope.$watch('__routes', function(newValue, oldValue) {
+        $scope.routes = [{'i18n': true, 'route': 'SITE_NAME'}].concat(newValue);
+      });
     }
   ]);
 });

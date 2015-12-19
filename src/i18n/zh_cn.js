@@ -2,7 +2,7 @@ define([
 
 ], function() {
     return {
-        'SITE_NAME': 'CloudOJ',
+        'SITE_NAME': 'OJBug',
         /* Sidebar Navigation */
         'SIDEBAR_SEARCH': '在 {{site}} 上搜索',
         'SIDEBAR_HOME' : '首页',
@@ -56,6 +56,8 @@ define([
         'INBOX_TITLE': '通知',
         /* About */
         'ABOUT_TITLE': '关于',
+        /* Site */
+        'SITE_NAME_TITLE': 'OJBug',
         /* Dialogs */
         'CARD_DONE': '好的',
         'CARD_DISMISS': '忽略'
