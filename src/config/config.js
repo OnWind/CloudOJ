@@ -4,7 +4,7 @@ define([
   'use strict';
   return app.constant('config', {
     site: {
-      name: "CloudOJ"
+      name: "OJBug"
     }
   });
 });

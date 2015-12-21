@@ -7,6 +7,8 @@ var gulp = require('gulp'),
     nodemon = require('gulp-nodemon'),
     livereload = require('gulp-livereload');
 
+var config = require('./config');
+
 var LessPluginCleanCSS = require('less-plugin-clean-css'),
     cleanCSSPlugin = new LessPluginCleanCSS({advanced: true});
 var LessPluginAutoPrefix = require('less-plugin-autoprefix'),
@@ -72,7 +74,7 @@ gulp.task('source:jade', function(){
   ], { base: 'src' })
     .pipe(plumber())
     .pipe(jade({
-      locals: {}
+      locals: config.jade
     }))
     .pipe(gulp.dest('public/'))
     .pipe(livereload());

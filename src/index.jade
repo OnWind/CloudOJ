@@ -1,20 +1,22 @@
 doctype html
 html(lang="en")
   head
-    link(rel="stylesheet" href="/stylesheets/main.css")
-    link(rel="stylesheet" href="/stylesheets/material.css")
     link(rel="stylesheet" href="//fonts.css.network/css?family=Roboto:300,400,500,700,400italic")
     link(rel="stylesheet" href="/static/angular-material/angular-material.min.css")
+    link(rel="stylesheet" href="/stylesheets/main.css")
+    link(rel="stylesheet" href="/stylesheets/material.css")
     meta(charset="utf-8")
-    meta&attributes({
-      name: "viewport",
-      content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    })
+    meta(
+      name="viewport",
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    )
     meta(name="author" content="SkyZH, OnWind Team")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="renderer" content="webkit")
     meta(name="robots" content="index,follow")
-    title(translate="SITE_NAME") OJBug
+    base(href="/")
+    title(translate="SITE_NAME") #{SITE_NAME}
+    meta(name="keywords" content="#{SITE_NAME}, Online Judge, OnWind, Programming")
 
     
   body(layout="row" ng-controller="AppController" class="ng-cloak")

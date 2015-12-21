@@ -1,9 +1,9 @@
 md-toolbar.md-whiteframe-z1(layout="row" ng-controller="NavbarController")
   div.md-toolbar-tools
-    md-button.md-icon-button&attributes({
-      "ng-click": "toggleSidenav('left')",
-      "hide-gt-sm": ""
-    })
+    md-button.md-icon-button(
+      ng-click="toggleSidenav('left')",
+      hide-gt-sm
+    )
       md-icon menu
     h1.md-breadcrumb
       div(ng-repeat="route in routes")

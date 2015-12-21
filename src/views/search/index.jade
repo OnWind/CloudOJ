@@ -2,10 +2,10 @@ md-dialog.ng-cloak
   form
     md-toolbar
       div.md-toolbar-tools
-        h2&attributes({
-          translate: "SIDEBAR_SEARCH",
-          "translate-value-site": "{{'SITE_NAME' | translate}}"
-        })
+        h2(
+          translate="SIDEBAR_SEARCH",
+          translate-value-site="{{'SITE_NAME' | translate}}"
+        )
         span(flex)
         md-button.md-icon-button
           md-icon close

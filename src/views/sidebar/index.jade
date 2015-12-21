@@ -5,14 +5,14 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
 })
   div(ng-controller="SidebarController")
     md-toolbar.md-tall.md-hue-2.menu-header
-      div.md-toolbar-tools-bottom.inset(layout="row")
+      div.md-toolbar-tools-bottom.inset(layout="column")
         div(flex)
           div.user-avatar(style="background-image: url({{user.avatar}})")
-        div(flex layout="column")
-          div(flex layout="row")
-            div(flex): h1.md-title SkyZH
-            div(flex): h2.md-subhead Level 1
-          div(flex): md-progress-linear(md-mode="determinate" value="40")
+        div(flex)
+          h1.md-caption 呆萌的弛哥万万没想到自己变成了大光头
+          div(layout="row" layout-align="space-between center")
+            small.md-caption(flex="30") OI 入门
+            md-progress-linear(flex md-mode="determinate" value="40")
     md-list
       md-menu-item
         md-button(ng-click="showSearch($event)")
