@@ -21,32 +21,37 @@ define([
         {
           items: [
             {
-                'url': 'home',
-                'name': 'SIDEBAR_HOME',
-                'icon': 'home',
-                'icon_class': 'primary'
+              'url': 'home',
+              'name': 'SIDEBAR_HOME',
+              'icon': 'home',
+              'class': 'primary'
             }, {
-                'url': 'problem',
-                'name': 'SIDEBAR_PROBLEM',
-                'icon': 'apps',
-                'icon_class': 'primary'
+              'url': 'dashboard',
+              'name': 'SIDEBAR_DASHBOARD',
+              'icon': 'apps',
+              'class': 'primary'
             }, {
-                'url': 'contest',
-                'name': 'SIDEBAR_CONTEST',
-                'icon': 'today',
-                'icon_class': 'primary'
+              'url': 'problem',
+              'name': 'SIDEBAR_PROBLEM',
+              'icon': 'apps',
+              'class': 'primary'
             }, {
-                'url': 'status',
-                'name': 'SIDEBAR_STATUS',
-                'icon': 'update'
+              'url': 'contest',
+              'name': 'SIDEBAR_CONTEST',
+              'icon': 'today',
+              'class': 'primary'
             }, {
-                'url': 'discuss',
-                'name': 'SIDEBAR_DISCUSS',
-                'icon': 'forum'
+              'url': 'status',
+              'name': 'SIDEBAR_STATUS',
+              'icon': 'update'
             }, {
-                'url': 'rank',
-                'name': 'SIDEBAR_RANK',
-                'icon': 'trending_up'
+              'url': 'discuss',
+              'name': 'SIDEBAR_DISCUSS',
+              'icon': 'forum'
+            }, {
+              'url': 'rank',
+              'name': 'SIDEBAR_RANK',
+              'icon': 'trending_up'
             }
           ]
         }, {
@@ -68,17 +73,17 @@ define([
               'url': 'user/logout',
               'name': 'SIDEBAR_LOGOUT',
               'icon': 'input',
-              'icon_class': 'accent'
+              'class': 'accent'
             }, {
               'url': 'user/register',
               'name': 'SIDEBAR_REGISTER',
               'icon': 'open_in_new',
-              'icon_class': 'accent'
+              'class': 'accent'
             }, {
               'url': 'user/login',
               'name': 'SIDEBAR_LOGIN',
               'icon': 'exit_to_app',
-              'icon_class': 'accent'
+              'class': 'accent'
             }
           ]
         }, {

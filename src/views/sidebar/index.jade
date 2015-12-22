@@ -19,8 +19,11 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
           {{menu.subheader | translate}}
         md-menu-item(ng-repeat="item in menu.items")
           md-button(ng-href="#/{{item.url}}")
-            md-icon.md-hue-2(ng-class="'md-' + item.icon_class" md-menu-align-target) {{item.icon}}
-            | {{item.name | translate}}
+            md-icon.md-hue-2(ng-class="'md-' + item.class" md-menu-align-target) {{item.icon}}
+            span {{item.name | translate}}
         md-divider
       md-menu-item
-        p: small {{'SIDEBAR_POWERED_BY_CLOUDOJ' | translate}}
+        p: small(
+          translate="SIDEBAR_POWERED_BY_CLOUDOJ"
+          translate-value-site="{{'SITE_NAME' | translate}}"
+        )

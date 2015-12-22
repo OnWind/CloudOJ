@@ -5,7 +5,7 @@ define([
   'use strict';
   app.config(["$mdThemingProvider", function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-      .primaryPalette('light-green')
+      .primaryPalette('blue')
       .accentPalette('amber')
       .backgroundPalette('grey');
   }]);
