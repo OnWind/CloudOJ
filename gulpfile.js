@@ -57,7 +57,16 @@ gulp.task('dependence', [
   'dependence:build-font'
 ]);
 
-gulp.task('source:less', function() {
+gulp.task('production:source:less', function() {
+  return gulp.src('src/**/*.less')
+    .pipe(less({
+      paths: [path.join(__dirname, 'src', 'stylesheets')],
+      plugins: [autoprefixPlugin, cleanCSSPlugin]
+    }))
+    .pipe(gulp.dest('public/'));
+});
+
+gulp.task('development:source:less', function() {
   return gulp.src('src/**/*.less')
     .pipe(plumber())
     .pipe(less({
@@ -68,7 +77,7 @@ gulp.task('source:less', function() {
     .pipe(livereload());
 });
 
-gulp.task('source:jade', function(){
+gulp.task('development:source:jade', function(){
   return gulp.src([
     'src/**/*.jade'
   ], { base: 'src' })
@@ -82,7 +91,20 @@ gulp.task('source:jade', function(){
     .pipe(livereload());
 });
 
-gulp.task('source:javascript', function(){
+
+gulp.task('production:source:jade', function(){
+  return gulp.src([
+    'src/**/*.jade'
+  ], { base: 'src' })
+    .pipe(jade({
+      locals: {
+        config: config
+      }
+    }))
+    .pipe(gulp.dest('public/'));
+});
+
+gulp.task('development:source:javascript', function(){
   return gulp.src([
     'src/**/*.js'
   ], { base: 'src' })
@@ -90,14 +112,22 @@ gulp.task('source:javascript', function(){
     .pipe(livereload());
 });
 
+gulp.task('production:source:javascript', function() {
+  return gulp.src([
+    'src/**/*.js'
+  ], { base: 'src' })
+    .pipe(gulp.dest('public/'));
+});
+
 gulp.task('development:server', function() {
   nodemon({
     verbose: true,
     script: './bin/www',
     ext: 'js',
-    watch: './routes',
+    watch: './routes app.js',
     env: {
-        'DEBUG': 'cloudoj:*'
+        'DEBUG': 'cloudoj:*',
+        'NODE_ENV': 'development'
     }
   })
   .on('restart', function () {
@@ -107,26 +137,32 @@ gulp.task('development:server', function() {
 
 gulp.task('development:watch', function () {
   livereload.listen();
-  gulp.watch('src/**/*.jade', ['source:jade']);
-  gulp.watch('src/stylesheets/**/*.less', ['source:less']);
-  gulp.watch('src/**/*.js', ['source:javascript']);
+  gulp.watch('src/**/*.jade', ['development:source:jade']);
+  gulp.watch('src/stylesheets/**/*.less', ['development:source:less']);
+  gulp.watch('src/**/*.js', ['development:source:javascript']);
 });
 
-gulp.task('production:javascript', function() {
-  return gulp.src([
-    'src/**/*.js'
-  ], { base: 'src/' })
-    .pipe(gulp.dest('public/'));
-});
-
-gulp.task('production:source', ['source', 'production:javascript'], function() {
+gulp.task('production:source', [
+  'production:source:less',
+  'production:source:jade',
+  'production:source:javascript'
+], function() {
   return gulp.src([
     'public/production/**/*'
   ], { base: 'public/production' })
     .pipe(gulp.dest('public/'));
 });
 
-gulp.task('source', ['source:less', 'source:jade']);
-gulp.task('default', ['dependence', 'source']);
-gulp.task('dev', ['source', 'development:watch', 'development:server']);
+gulp.task('development:source', [
+  'development:source:less',
+  'development:source:jade',
+  'development:source:javascript'
+]);
+
+gulp.task('dev', [
+  'development:source',
+  'development:watch',
+  'development:server'
+]);
+
 gulp.task('production', ['production:source']);
