@@ -5,30 +5,21 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
 })
   div(ng-controller="SidebarController")
     md-toolbar.md-tall.md-hue-2.menu-header
-      div.md-toolbar-tools-bottom.inset(layout="column")
-        div(flex)
-          div.user-avatar(style="background-image: url({{user.avatar}})")
-        div(flex)
-          h1.md-caption 呆萌的弛哥万万没想到自己变成了大光头
-          div(layout="row" layout-align="space-between center")
-            small.md-caption(flex="30") OI 入门
-            md-progress-linear(flex md-mode="determinate" value="40")
+      include avatar
     md-list
       md-menu-item
         md-button(ng-click="showSearch($event)")
           md-icon.md-primary.md-hue-2(md-menu-align-target) search
-          span&attributes({
-            translate: "SIDEBAR_SEARCH",
-            "translate-value-site": "{{'SITE_NAME' | translate}}"
-          })
+          span(
+            translate="SIDEBAR_SEARCH"
+            translate-value-site="{{'SITE_NAME' | translate}}"
+          )
       div(ng-repeat="menu in menus")
-        md-subheader&attributes({
-          'ng-if': "menu.subheader"
-        })
+        md-subheader(ng-if="menu.subheader")
           {{menu.subheader | translate}}
         md-menu-item(ng-repeat="item in menu.items")
           md-button(ng-href="#/{{item.url}}")
-            md-icon(ng-class="'md-' + item.icon_class" md-menu-align-target) {{item.icon}}
+            md-icon.md-hue-2(ng-class="'md-' + item.icon_class" md-menu-align-target) {{item.icon}}
             | {{item.name | translate}}
         md-divider
       md-menu-item

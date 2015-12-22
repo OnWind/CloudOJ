@@ -67,16 +67,18 @@ define([
             }, {
               'url': 'user/logout',
               'name': 'SIDEBAR_LOGOUT',
-              'icon': 'exit_to_app',
-              'icon_class': 'md-primary'
+              'icon': 'input',
+              'icon_class': 'accent'
             }, {
               'url': 'user/register',
               'name': 'SIDEBAR_REGISTER',
-              'icon': 'open_in_new'
+              'icon': 'open_in_new',
+              'icon_class': 'accent'
             }, {
               'url': 'user/login',
               'name': 'SIDEBAR_LOGIN',
-              'icon': 'input'
+              'icon': 'exit_to_app',
+              'icon_class': 'accent'
             }
           ]
         }, {

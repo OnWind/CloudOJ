@@ -1,24 +1,24 @@
 md-toolbar.md-whiteframe-z1(layout="row" ng-controller="NavbarController")
   div.md-toolbar-tools
     md-button.md-icon-button(
-      ng-click="toggleSidenav('left')",
+      ng-click="toggleSidenav('left')"
       hide-gt-sm
     )
       md-icon menu
     h1.md-breadcrumb
       div(ng-repeat="route in routes")
-        mixin navTemplate
+        mixin breadcrumb
           span(ng-if="route.i18n") {{route.route + '_TITLE' | translate}}
           span(ng-if="!route.i18n") {{route.route}}
         div(ng-switch="routes.length - $index - 1")
           span(ng-switch-when="0")
-            +navTemplate
+            +breadcrumb
           span(hide show-gt-xs ng-switch-when="1")
-            +navTemplate
+            +breadcrumb
             md-icon chevron_right
           span(hide show-gt-sm ng-switch-when="2")
-            +navTemplate
+            +breadcrumb
             md-icon chevron_right
           span(hide show-gt-md ng-switch-default)
-            +navTemplate
+            +breadcrumb
             md-icon chevron_right

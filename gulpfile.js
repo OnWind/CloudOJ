@@ -74,7 +74,9 @@ gulp.task('source:jade', function(){
   ], { base: 'src' })
     .pipe(plumber())
     .pipe(jade({
-      locals: config.jade
+      locals: {
+        config: config
+      }
     }))
     .pipe(gulp.dest('public/'))
     .pipe(livereload());

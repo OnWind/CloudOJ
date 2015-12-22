@@ -1,5 +1,3 @@
 module.exports = {
-    jade: {
-        SITE_NAME: "OJBug"
-    }
+    SITE_NAME: "OJBug"
 };
