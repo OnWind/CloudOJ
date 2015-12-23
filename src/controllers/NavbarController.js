@@ -10,7 +10,7 @@ define([
       };
       $scope.__routes = $route.current.locals.routes;
       $scope.$watch('__routes', function(newValue, oldValue) {
-        $scope.routes = [{'i18n': true, 'route': 'SITE_NAME'}].concat(newValue);
+        $scope.routes = [{i18n_title: 'SITE_NAME'}].concat(newValue);
       });
     }
   ]);

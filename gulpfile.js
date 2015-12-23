@@ -121,22 +121,22 @@ gulp.task('production:source:javascript', function() {
 
 gulp.task('development:server', function() {
   nodemon({
-    verbose: true,
+    verbose: false,
     script: './bin/www',
     ext: 'js',
-    watch: './routes app.js',
+    watch: './routes',
     env: {
         'DEBUG': 'cloudoj:*',
         'NODE_ENV': 'development'
-    }
-  })
-  .on('restart', function () {
-    console.log('Server restarted.');
+    },
+    stdout: false
   });
 });
 
 gulp.task('development:watch', function () {
-  livereload.listen();
+  livereload.listen({
+    quiet: true
+  });
   gulp.watch('src/**/*.jade', ['development:source:jade']);
   gulp.watch('src/stylesheets/**/*.less', ['development:source:less']);
   gulp.watch('src/**/*.js', ['development:source:javascript']);
@@ -159,7 +159,7 @@ gulp.task('development:source', [
   'development:source:javascript'
 ]);
 
-gulp.task('dev', [
+gulp.task('development', [
   'development:source',
   'development:watch',
   'development:server'

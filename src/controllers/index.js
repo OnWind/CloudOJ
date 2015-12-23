@@ -4,7 +4,8 @@ define([
   './NavbarController',
   './SidebarController',
   './HomeController',
-  './SearchController'
+  './SearchController',
+  './HelpController'
 ], function(app) {
   'use strict';
   return app;

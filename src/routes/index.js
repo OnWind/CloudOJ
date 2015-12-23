@@ -10,27 +10,14 @@ define([
         templateUrl: "views/home/index.html",
         controller: "HomeController",
         resolve: {
-          routes: function() { return [{i18n: true, route: 'HOME'}]; }
+          routes: function() { return [{i18n_title: 'HOME'}]; }
         }
       })
-      .when('/home/submit', {
-        templateUrl: "views/home/index.html",
-        controller: "HomeController",
+      .when('/help', {
+        templateUrl: "views/help/index.html",
+        controller: "HelpController",
         resolve: {
-          routes: function() { return [
-            {i18n: true, route: 'HOME'},
-            {i18n: true, route: 'DISCUSS'},
-            {i18n: true, route: 'DISCUSS'},
-            {i18n: true, route: 'DISCUSS'},
-            {i18n: false, route: 'A+B Problem'}
-          ]; }
-        }
-      })
-      .when('/help/about', {
-        templateUrl: "views/home/index.html",
-        controller: "HomeController",
-        resolve: {
-          routes: function(){ return [{i18n: true, route: 'ABOUT'}]; }
+          routes: function(){ return [{i18n_title: 'HELP'}]; }
         }
       })
       .otherwise({

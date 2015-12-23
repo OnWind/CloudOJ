@@ -8,7 +8,7 @@ The new CloudOJ, made with Node.js.
 
 BSD 3-Clause "New" or "Revised" license
 
-## Make your own Online Judge
+## Make your own CloudOJ
 
 Change site name in `src/i18n/<region>.js` `src/config/config.js`
 and `config.js`

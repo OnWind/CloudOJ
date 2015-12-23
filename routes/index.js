@@ -1,4 +1,4 @@
-module.exports = function (env) {
+module.exports = function(env) {
   var express = require('express');
   var router = express.Router();
 

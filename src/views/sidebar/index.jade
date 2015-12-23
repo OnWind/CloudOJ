@@ -1,8 +1,8 @@
-md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
-  layout: "column",
-  "md-component-id": "left",
-  "md-is-locked-open": "$mdMedia('gt-sm')"
-})
+md-sidenav.md-sidenav-left.md-whiteframe-z2(
+  layout="column"
+  md-component-id="left"
+  md-is-locked-open="$mdMedia('gt-sm')"
+)
   div(ng-controller="SidebarController")
     md-toolbar.md-tall.md-hue-2.menu-header
       include avatar
@@ -15,8 +15,7 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2&attributes({
             translate-value-site="{{'SITE_NAME' | translate}}"
           )
       div(ng-repeat="menu in menus")
-        md-subheader(ng-if="menu.subheader")
-          {{menu.subheader | translate}}
+        md-subheader(ng-if="menu.subheader") {{menu.subheader | translate}}
         md-menu-item(ng-repeat="item in menu.items")
           md-button(ng-href="#/{{item.url}}")
             md-icon.md-hue-2(ng-class="'md-' + item.class" md-menu-align-target) {{item.icon}}
