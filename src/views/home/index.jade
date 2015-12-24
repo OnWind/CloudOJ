@@ -1,12 +1,19 @@
-div.relative(layout-fill)
-  md-button.md-fab.md-fab-bottom-right
-    md-icon add
-
-md-content(flex md-scroll-y)
-  include ../navbar/index
-  md-content.md-padding(
+md-content.content-home(layout="column" flex md-scroll-y)
+  md-toolbar.md-whiteframe-1dp(md-theme="home")
+    include ../navbar/index
+  md-content(
     layout="row"
     layout-wrap
-    layout-align="center start"
-    layout-fill
+    layout-align="start"
+    layout-padding
   )
+    div(flex="33" flex-sm="50" flex-xs="100" layout="column" ng-repeat="card in cards")
+      md-card
+        md-card-title
+          md-card-title-text
+            span.md-headline CloudOJ
+            span.md-subhead Notification
+          md-card-title-media
+            div.md-media-lg.card-media
+        md-card-actions(layout="column" layout-align="start")
+          md-button More

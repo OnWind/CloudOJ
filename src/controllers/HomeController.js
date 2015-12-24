@@ -5,7 +5,7 @@ define([
   return app.controller('HomeController', [
     "$scope",
     function($scope) {
-      $scope.messages = [
+      $scope.cards = [
         "Hello!",
         "Welcome!",
         "This is CloudOJ!!",
@@ -14,7 +14,10 @@ define([
         "This is CloudOJ!",
         "Hello!!!",
         "Welcome!!!",
-        "This is CloudOJ!!!"
+        "This is CloudOJ!!!",
+        "Hello!!!!",
+        "Welcome!!!!",
+        "This is CloudOJ!!!!"
       ];
     }
   ]);

@@ -1,24 +1,23 @@
-md-toolbar.md-whiteframe-z1(layout="row" ng-controller="NavbarController")
-  div.md-toolbar-tools
-    md-button.md-icon-button(
-      ng-click="toggleSidenav('left')"
-      hide-gt-sm
-    )
-      md-icon menu
-    h1.md-breadcrumb
-      div(ng-repeat="route in routes")
-        mixin breadcrumb
-          span(ng-if="route.i18n_title") {{route.i18n_title + '_TITLE' | translate}}
-          span(ng-if="route.title") {{route.title}}
-        div(ng-switch="routes.length - $index - 1")
-          span(ng-switch-when="0")
-            +breadcrumb
-          span(hide show-gt-xs ng-switch-when="1")
-            +breadcrumb
-            md-icon chevron_right
-          span(hide show-gt-sm ng-switch-when="2")
-            +breadcrumb
-            md-icon chevron_right
-          span(hide show-gt-md ng-switch-default)
-            +breadcrumb
-            md-icon chevron_right
+div.md-toolbar-tools(ng-controller="NavbarController")
+  md-button.md-icon-button(
+    ng-click="toggleSidenav('left')"
+    hide-gt-sm
+  )
+    md-icon menu
+  h1.md-breadcrumb
+    div(ng-repeat="route in routes")
+      mixin breadcrumb
+        span(ng-if="route.i18n_title") {{route.i18n_title + '_TITLE' | translate}}
+        span(ng-if="route.title") {{route.title}}
+      div(ng-switch="routes.length - $index - 1")
+        span(ng-switch-when="0")
+          +breadcrumb
+        span(hide show-gt-xs ng-switch-when="1")
+          +breadcrumb
+          md-icon chevron_right
+        span(hide show-gt-sm ng-switch-when="2")
+          +breadcrumb
+          md-icon chevron_right
+        span(hide show-gt-md ng-switch-default)
+          +breadcrumb
+          md-icon chevron_right
