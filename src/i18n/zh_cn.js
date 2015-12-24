@@ -10,7 +10,7 @@ define([
     'SIDEBAR_PROBLEM': '试题',
     'SIDEBAR_CONTEST': '竞赛',
     'SIDEBAR_DISCUSS': '讨论',
-    'SIDEBAR_STATUS': '评测',
+    'SIDEBAR_JUDGE': '评测',
     'SIDEBAR_RANK': '排名',
     /* Sidebar Footer */
     'SIDEBAR_ABOUT': '关于',
@@ -26,6 +26,7 @@ define([
     'SIDEBAR_REGISTER': '注册',
     'SIDEBAR_LOGOUT': '注销',
     'SIDEBAR_SETTING': '设置',
+    'SIDEBAR_STATUS': '状态',
     'SIDEBAR_PERSONAL': '个人',
     /* Sidebar Footer */
     'SIDEBAR_POWERED_BY_CLOUDOJ': '{{site}} 由 CloudOJ 强力驱动',

@@ -41,8 +41,8 @@ define([
               'icon': 'today',
               'class': 'primary'
             }, {
-              'url': 'status',
-              'name': 'SIDEBAR_STATUS',
+              'url': 'judge',
+              'name': 'SIDEBAR_JUDGE',
               'icon': 'update'
             }, {
               'url': 'discuss',
@@ -105,6 +105,10 @@ define([
               'url': 'help/feedback',
               'name': 'SIDEBAR_FEEDBACK',
               'icon': 'feedback'
+            }, {
+              'url': 'status',
+              'name': 'SIDEBAR_STATUS',
+              'icon': 'update'
             }, {
               'url': 'locale',
               'name': 'SIDEBAR_LANGUAGE',

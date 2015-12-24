@@ -109,6 +109,7 @@ gulp.task('development:source:javascript', function(){
     'src/**/*.js'
   ], { base: 'src' })
     .pipe(plumber())
+    .pipe(gulp.dest('public/'))
     .pipe(livereload());
 });
 

@@ -6,7 +6,7 @@ module.exports = function(env) {
   var problem = require('./problem');
   var contest = require('./contest');
   var discuss = require('./discuss');
-  var status = require('./status');
+  var judge = require('./judge');
   var help = require('./help');
   var ums = require('./ums');
   var search = require('./search');
@@ -15,7 +15,7 @@ module.exports = function(env) {
   router.use('/problem', problem);
   router.use('/contest', contest);
   router.use('/discuss', discuss);
-  router.use('/status', status);
+  router.use('/judge', judge);
   router.use('/help', help);
   router.use('/ums', ums);
   router.use('/search', search);
