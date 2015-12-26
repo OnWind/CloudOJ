@@ -98,7 +98,8 @@ gulp.task('production:source:jade', function(){
   ], { base: 'src' })
     .pipe(jade({
       locals: {
-        config: config
+        config: config,
+        is_production: true
       }
     }))
     .pipe(gulp.dest('public/'));
