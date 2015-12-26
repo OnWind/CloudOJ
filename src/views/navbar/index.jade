@@ -7,8 +7,8 @@ div.md-toolbar-tools(ng-controller="NavbarController")
   h1.md-breadcrumb
     div(ng-repeat="route in routes")
       mixin breadcrumb
-        span(ng-if="route.i18n_title") {{route.i18n_title + '_TITLE' | translate}}
-        span(ng-if="route.title") {{route.title}}
+        md-button(ng-if="route.i18n_title") {{route.i18n_title + '_TITLE' | translate}}
+        md-button(ng-if="route.title") {{route.title}}
       div(ng-switch="routes.length - $index - 1")
         span(ng-switch-when="0")
           +breadcrumb
