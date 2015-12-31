@@ -3,8 +3,8 @@ node_js:
   - "5.3"
   - "4.2"
 before_script:
-  - npm install -g gulp bower requirejs
-  - gulp production
+  - npm install -g gulp requirejs
+  - gulp build
 before_install:
   - npm install -g node-gyp
 env:
