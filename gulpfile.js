@@ -17,6 +17,7 @@ var options = minimist(process.argv.slice(2), {
 });
 
 config.is_production = (options.env === 'production');
+config.package = require('./package.json');
 
 require('./build/dependence');
 require('./build/less')(config);

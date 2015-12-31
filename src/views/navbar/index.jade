@@ -8,7 +8,7 @@ div.md-toolbar-tools(ng-controller="NavbarController")
       mixin breadcrumb
         md-button(
           ng-if="route.i18n_title"
-          ng-href="#/{{ route.href != undifined ? route.href : route.i18n_title}}"
+          ng-href="#/{{ route.href != undifined ? route.href : route.i18n_title | lowercase}}"
         ) {{route.i18n_title + '_TITLE' | translate}}
         md-button(
           ng-if="route.title"
