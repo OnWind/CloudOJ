@@ -16,7 +16,7 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2(
       div(ng-repeat="menu in menus")
         md-subheader(ng-if="menu.subheader") {{menu.subheader | translate}}
         md-menu-item(ng-repeat="item in menu.items")
-          md-button(ng-href="#/{{item.url}}")
+          md-button(ng-href="#/{{item.url}}" ng-click="onSidenavClick()")
             md-icon.md-hue-2(ng-class="'md-' + item.class" md-menu-align-target) {{item.icon}}
             span {{item.name | translate}}
         md-divider

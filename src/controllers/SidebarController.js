@@ -3,10 +3,13 @@ define([
 ], function(app) {
   'use strict';
   return app.controller('SidebarController', [
-    "$scope", "$translate", "$mdDialog",
-    function($scope, $translate, $mdDialog) {
+    "$scope", "$translate", "$mdDialog", "$mdSidenav",
+    function($scope, $translate, $mdDialog, $mdSidenav) {
       $scope.user = {
         avatar: "/images/avatar.jpg"
+      };
+      $scope.onSidenavClick = function() {
+        $mdSidenav("left").close();
       };
       $scope.showSearch = function(ev) {
         $mdDialog.show({
