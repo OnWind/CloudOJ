@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
   head
     link(rel="stylesheet" href="//fonts.css.network/css?family=Roboto:300,400,500,700,400italic")
-    if is_production
+    if config.is_production
       link(rel="stylesheet" href="//cdn.bootcss.com/angular-material/1.0.1/angular-material.min.css")
     else
       link(rel="stylesheet" href="/static/angular-material/angular-material.min.css")
@@ -23,7 +23,7 @@ html(lang="en")
 
     
   body(layout="row" ng-controller="AppController" class="ng-cloak" md-theme="default")
-    if is_production
+    if config.is_production
       script(
         src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"
         defer async="true" data-main="./config.require.js"
