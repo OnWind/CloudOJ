@@ -14,7 +14,8 @@ before_script:
 before_install:
   - npm install -g node-gyp
 env:
-  - CXX=g++-4.8
+  global:
+    - CXX=g++-4.8
   matrix:
     - TEST_ENVIRONMENT=development
     - TEST_ENVIRONMENT=production
