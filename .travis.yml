@@ -4,11 +4,20 @@ node_js:
   - "4.2"
 before_script:
   - npm install -g gulp requirejs
-  - gulp build
+  - |
+      if [ "$TEST_ENVIRONMENT" = development ]; then
+        npm install -g bower
+        bower install
+        gulp dependence
+      fi
+  - gulp build --env $TEST_ENVIRONMENT
 before_install:
   - npm install -g node-gyp
 env:
   - CXX=g++-4.8
+  matrix:
+  - TEST_ENVIRONMENT=development
+  - TEST_ENVIRONMENT=production
 addons:
   apt:
     sources:
