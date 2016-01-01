@@ -16,8 +16,8 @@ before_install:
 env:
   - CXX=g++-4.8
   matrix:
-  - TEST_ENVIRONMENT=development
-  - TEST_ENVIRONMENT=production
+    - TEST_ENVIRONMENT=development
+    - TEST_ENVIRONMENT=production
 addons:
   apt:
     sources:
