@@ -1,6 +1,8 @@
 # CloudOJ
 
 [![Build Status](https://travis-ci.org/OnWind/CloudOJ.svg?branch=master)](https://travis-ci.org/OnWind/CloudOJ)
+[![Dependency Status](https://david-dm.org/OnWind/CloudOJ.svg)](https://david-dm.org/OnWind/CloudOJ)
+[![devDependency Status](https://david-dm.org/OnWind/CloudOJ/dev-status.svg)](https://david-dm.org/OnWind/CloudOJ#info=devDependencies)
 
 The new CloudOJ, made with Node.js.
 
