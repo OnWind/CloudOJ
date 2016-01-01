@@ -2,8 +2,8 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2(
   layout="column"
   md-component-id="left"
 )
-  div(ng-controller="SidebarController")
-    md-toolbar.md-tall.md-hue-2.menu-header
+  md-content(ng-controller="SidebarController")
+    md-toolbar.md-tall.md-hue-2.menu-header(layout="column")
       include avatar
     md-list
       md-menu-item
@@ -13,6 +13,7 @@ md-sidenav.md-sidenav-left.md-whiteframe-z2(
             translate="SIDEBAR_SEARCH"
             translate-value-site="{{'SITE_NAME' | translate}}"
           )
+      md-divider
       div(ng-repeat="menu in menus")
         md-subheader(ng-if="menu.subheader") {{menu.subheader | translate}}
         md-menu-item(ng-repeat="item in menu.items")

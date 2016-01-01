@@ -36,7 +36,7 @@ define([
             }, {
               'url': 'problem',
               'name': 'SIDEBAR_PROBLEM',
-              'icon': 'apps',
+              'icon': 'code',
               'class': 'primary'
             }, {
               'url': 'contest',

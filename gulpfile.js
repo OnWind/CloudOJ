@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     nodemon = require('gulp-nodemon'),
     livereload = require('gulp-livereload'),
-    gulpif = require('gulp-if');
+    gulpif = require('gulp-if'),
+    gutil = require('gulp-util');
 
 var config = require('./config');
 
@@ -19,23 +20,18 @@ var options = minimist(process.argv.slice(2), {
 config.is_production = (options.env === 'production');
 config.package = require('./package.json');
 
+if(config.is_production){
+  gutil.log(gutil.colors.blue("Running in production mode"));
+} else {
+  gutil.log(gutil.colors.blue("Running in development mode"));
+}
+
 require('./build/dependence');
 require('./build/less')(config);
 require('./build/jade')(config);
 require('./build/javascript')(config);
 require('./build/images')(config);
-
-gulp.task('source', [
-  'source:less',
-  'source:jade',
-  'source:javascript',
-  'source:images'
-], function() {
-  return gulp.src([
-    'public/production/**/*'
-  ], { base: 'public/production' })
-    .pipe(gulpif(config.is_production, gulp.dest('public/')));
-});
+require('./build/source')(config);
 
 gulp.task('development:server', function() {
   nodemon({
@@ -67,3 +63,11 @@ gulp.task('watch', [
 ]);
 
 gulp.task('build', ['source']);
+
+gulp.task('help', function() {
+  console.log("CloudOJ v" + config.package.version);
+  console.log("Building CloudOJ via the following commands:");
+  console.log("gulp build                     Build production version");
+  console.log("gulp denpendence               Build Dependencies");
+  console.log("gulp watch --env development   Watch for changes and run development server");
+});
