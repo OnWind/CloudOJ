@@ -40,8 +40,8 @@ define([
     'CONTEST_TITLE': '比赛',
     /* Discuss */
     'DISCUSS_TITLE': '讨论',
-    /* Status */
-    'STATUS_TITLE': '评测',
+    /* Judge */
+    'JUDGE_TITLE': '评测',
     /* Rank */
     'RANK_TITLE': '排名',
     /* Settings */
@@ -60,6 +60,8 @@ define([
     'INBOX_TITLE': '通知',
     /* About */
     'ABOUT_TITLE': '关于',
+    /* Status */
+    'STATUS_TITLE': '状态',
     /* Error */
     'ERROR_TITLE': '出错了',
     /* Site */

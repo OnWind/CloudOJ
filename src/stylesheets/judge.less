@@ -1,0 +1,68 @@
+.judge {
+  cursor: default;
+  border-radius: 16px;
+  display: block;
+  height: 30px;
+  line-height: 32px;
+  margin: 8px 8px 0 0;
+  padding: 0 12px;
+  float: left;
+  box-sizing: border-box;
+  max-width: 100%;
+  position: relative;
+  font-size: 14px;
+}
+@judge-color-grey: #eeeeee;
+@judge-color-accepted: #5cb85c;
+@judge-color-compiling: #f0ad4e;
+@judge-color-running: #5bc0de;
+@judge-color-wrong: #d9534f;
+
+.judge-ac {
+  background-color: @judge-color-accepted;
+  color: #fff;
+}
+.judge-ap {
+  background-color: @judge-color-accepted;
+  color: #fff;
+}
+.judge-pd {
+  background-color: @judge-color-grey;
+  color: #000;
+}
+.judge-se {
+  background-color: @judge-color-grey;
+  color: #000;
+}
+.judge-rd {
+  background-color: @judge-color-grey;
+  color: #000;
+}
+.judge-run {
+  background-color: @judge-color-running;
+  color: #fff;
+}
+.judge-cp {
+  background-color: @judge-color-compiling;
+  color: #fff;
+}
+.judge-pe {
+  background-color: @judge-color-compiling;
+  color: #fff;
+}
+.judge-wa {
+  background-color: @judge-color-wrong;
+  color: #fff;
+}
+.judge-mle {
+  background-color: @judge-color-wrong;
+  color: #fff;
+}
+.judge-tle {
+  background-color: @judge-color-wrong;
+  color: #fff;
+}
+.judge-re {
+  background-color: @judge-color-wrong;
+  color: #fff;
+}

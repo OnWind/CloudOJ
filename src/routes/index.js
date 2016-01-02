@@ -27,6 +27,13 @@ define([
           routes: function(){ return [{i18n_title: 'PROBLEM'}]; }
         }
       })
+      .when('/judge', {
+        templateUrl: "views/judge/index.html",
+        controller: 'JudgeController',
+        resolve: {
+          routes: function(){ return [{i18n_title: 'JUDGE'}]; }          
+        }
+      })
       .when('/', {
         redirectTo: '/home'
       })

@@ -1,1 +1,59 @@
-p.md-primary Accepted AC 评测通过
+md-content(layout="column" flex layout-fill)
+  md-toolbar.md-whiteframe-z1
+    include ../navbar/index
+  md-content(
+    layout="row"
+    layout-wrap
+    layout-align="center"
+    layout-padding
+    flex
+  )
+    md-card
+      div.md-chips
+        span.judge.judge-pd Pending
+        span.judge.judge-pd PD
+        span.judge.judge-pd 分发中
+      div.md-chips
+        span.judge.judge-cp Compiling
+        span.judge.judge-cp CP
+        span.judge.judge-cp 编译中
+      div.md-chips
+        span.judge.judge-rd Ready
+        span.judge.judge-rd RD
+        span.judge.judge-rd 准备中
+      div.md-chips
+        span.judge.judge-run Running
+        span.judge.judge-run RUN
+        span.judge.judge-run 运行中
+      div.md-chips
+        span.judge.judge-se System Error
+        span.judge.judge-se SE
+        span.judge.judge-se 系统错误
+      div.md-chips
+        span.judge.judge-ac Accepted
+        span.judge.judge-ac AC
+        span.judge.judge-ac 评测通过
+      div.md-chips
+        span.judge.judge-ap Accepted(PE)
+        span.judge.judge-ap AC
+        span.judge.judge-ap 评测通过(格式错误)
+      div.md-chips
+        span.judge.judge-pe Presentation Error
+        span.judge.judge-pe PE
+        span.judge.judge-pe 格式错误
+      div.md-chips
+        span.judge.judge-wa Wrong Answer
+        span.judge.judge-wa WA
+        span.judge.judge-wa 答案错误
+      div.md-chips
+        span.judge.judge-tle Time Limit Exceed
+        span.judge.judge-tle TLE
+        span.judge.judge-tle 超过时限
+      div.md-chips
+        span.judge.judge-mle Memory Limit Exceed
+        span.judge.judge-mle MLE
+        span.judge.judge-mle 超过内存限制
+      div.md-chips
+        span.judge.judge-re Runtime Error
+        span.judge.judge-re RE
+        span.judge.judge-re 运行错误

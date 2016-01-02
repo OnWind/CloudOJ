@@ -7,7 +7,8 @@ define([
   './SearchController',
   './HelpController',
   './ProblemController',
-  './ErrorController'
+  './ErrorController',
+  './JudgeController'
 ], function(app) {
   'use strict';
   return app;
