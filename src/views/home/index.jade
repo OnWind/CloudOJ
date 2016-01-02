@@ -1,19 +1,14 @@
-md-content(layout="column" flex md-scroll-y)
-  md-toolbar.md-whiteframe-1dp(md-theme="home")
+md-content.background(layout="column" flex md-scroll-y)
+  md-toolbar(md-theme="home")
     include ../navbar/index
   md-content(
-    layout="row"
-    layout-wrap
-    layout-align="start"
+    layout="column"
     layout-padding
+    layout-align="center center"
   )
-    div(flex="33" flex-sm="50" flex-xs="100" layout="column" ng-repeat="card in cards")
-      md-card
-        md-card-title
-          md-card-title-text
-            span.md-headline CloudOJ
-            span.md-subhead Notification
-          md-card-title-media
-            div.md-media-lg.card-media
-        md-card-actions(layout="column" layout-align="start")
-          md-button More
+    h1.title.md-headline OJBUG | OIers 的在线评测平台
+    h1.title.md-display-4 ∞
+    div(layout="row")
+      md-button.md-raised.md-primary(ng-href="#/problem") 题库
+      md-button.md-raised.md-primary 注册
+      md-button.md-raised.md-primary 登录

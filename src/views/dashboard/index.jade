@@ -1,0 +1,19 @@
+md-content(layout="column" flex md-scroll-y)
+  md-toolbar.md-whiteframe-1dp
+    include ../navbar/index
+  md-content(
+    layout="row"
+    layout-wrap
+    layout-align="start"
+    layout-padding
+  )
+    div(flex="33" flex-sm="50" flex-xs="100" layout="column" ng-repeat="card in cards")
+      md-card
+        md-card-title
+          md-card-title-text
+            span.md-headline CloudOJ
+            span.md-subhead Notification
+          md-card-title-media
+            div.md-media-lg.card-media
+        md-card-actions(layout="column" layout-align="start")
+          md-button More
