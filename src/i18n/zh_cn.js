@@ -59,6 +59,8 @@ define([
     'INBOX_TITLE': '通知',
     /* About */
     'ABOUT_TITLE': '关于',
+    /* Error */
+    'ERROR_TITLE': '出错了',
     /* Site */
     'SITE_NAME_TITLE': 'OJBug',
     /* Dialogs */

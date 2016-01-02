@@ -2,7 +2,7 @@ define([
   'app'
 ], function(app) {
   'use strict';
-  return app.controller('ProblemController', [
+  return app.controller('ErrorController', [
     "$scope",
     function($scope) {
     }

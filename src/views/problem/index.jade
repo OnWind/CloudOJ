@@ -1,15 +1,36 @@
 md-content(layout="column" flex)
   md-toolbar(md-scroll-shrink)
     include ../navbar/index
-  md-content
-    section
-      md-subheader.md-primary {{'PROBLEM_ALL' | translate}}
-      md-list(layout-padding)
-        md-list-item.md-3-line(
-          ng-repeat="message in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-        )
-            h1.md-display-3 1000
-            div.md-list-item-text
-              h3 A+B Problem
-              h4 Time Limit 1000ms
-              p Easy and Simple
+  md-content(
+    layout="row"
+    layout-wrap
+    layout-align="center"
+    layout-padding
+  )
+    div(flex="70" flex-sm="100" flex-xs="100" layout="column")
+      md-card
+        md-card-title
+          md-card-title-text
+            span.md-headline {{'PROBLEM_ALL' | translate}}
+        section
+          md-list(layout-padding)
+            md-list-item.md-3-line(
+              ng-repeat="message in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+              ng-href="#/"
+            )
+              div.problem-icon
+                span.md-display-1 1000
+                div(
+                  layout="row"
+                  layout-align="center center"
+                )
+                  span.md-body-2(
+                    flex="35"
+                  ) WA
+                  md-progress-linear(
+                    flex
+                    md-mode="determinate"
+                    value="{{ $index * 10 }}")
+              div.md-list-item-text
+                h3 A+B 问题
+                p 简单算法 提交 200/500

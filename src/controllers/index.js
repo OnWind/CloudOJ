@@ -6,7 +6,8 @@ define([
   './HomeController',
   './SearchController',
   './HelpController',
-  './ProblemController'
+  './ProblemController',
+  './ErrorController'
 ], function(app) {
   'use strict';
   return app;
