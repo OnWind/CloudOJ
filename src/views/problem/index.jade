@@ -1,0 +1,15 @@
+md-content(layout="column" flex)
+  md-toolbar(md-scroll-shrink)
+    include ../navbar/index
+  md-content
+    section
+      md-subheader.md-primary {{'PROBLEM_ALL' | translate}}
+      md-list(layout-padding)
+        md-list-item.md-3-line(
+          ng-repeat="message in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+        )
+            h1.md-display-3 1000
+            div.md-list-item-text
+              h3 A+B Problem
+              h4 Time Limit 1000ms
+              p Easy and Simple

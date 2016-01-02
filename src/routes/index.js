@@ -20,8 +20,25 @@ define([
           routes: function(){ return [{i18n_title: 'HELP'}]; }
         }
       })
-      .otherwise({
+      .when('/problem', {
+        templateUrl: "views/problem/index.html",
+        controller: "ProblemController",
+        resolve: {
+          routes: function(){ return [{i18n_title: 'PROBLEM'}]; }
+        }
+      })
+      .when('/', {
         redirectTo: '/home'
+      })
+      .when('/error', {
+        templateUrl: "views/error/index.html",
+        controller: "ErrorController",
+        resolve: {
+          routes: function(){ return [{i18n_title: 'ERROR'}]; }
+        }
+      })
+      .otherwise({
+        redirectTo: '/error'
       });
     }
   ]);

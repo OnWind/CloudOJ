@@ -34,6 +34,7 @@ define([
     'HOME_TITLE': '首页',
     /* Problem */
     'PROBLEM_TITLE': '试题',
+    'PROBLEM_ALL': '所有试题',
     /* Contest */
     'CONTEST_TITLE': '比赛',
     /* Discuss */
