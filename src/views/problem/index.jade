@@ -1,14 +1,15 @@
-md-content(layout="column" flex)
-  md-toolbar(md-scroll-shrink)
+md-content(layout="column" flex layout-fill)
+  md-toolbar.md-whiteframe-z1
     include ../navbar/index
   md-content(
     layout="row"
     layout-wrap
     layout-align="center"
     layout-padding
+    flex
   )
     div(flex="70" flex-sm="100" flex-xs="100" layout="column")
-      md-card
+      md-card.card-list
         md-card-title
           md-card-title-text
             span.md-headline {{'PROBLEM_ALL' | translate}}
@@ -27,10 +28,10 @@ md-content(layout="column" flex)
                   span.md-body-2(
                     flex="35"
                   ) WA
-                  md-progress-linear(
+                  md-progress-linear.md-warn(
                     flex
                     md-mode="determinate"
                     value="{{ $index * 10 }}")
               div.md-list-item-text
                 h3 A+B 问题
-                p 简单算法 提交 200/500
+                p 分类 简单算法 | 提交 200/500 {{ 200/500*100 | number : 2 }}%

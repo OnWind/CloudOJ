@@ -1,3 +1,3 @@
 module.exports = {
-    SITE_NAME: "OJBug"
+    SITE_NAME: "OJInf"
 };

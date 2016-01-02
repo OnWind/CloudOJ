@@ -22,6 +22,7 @@ define([
       };
       $scope.menus = [
         {
+          subheader: "SIDEBAR_NAVIGATE",
           items: [
             {
               'url': 'home',

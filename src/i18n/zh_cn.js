@@ -2,7 +2,7 @@ define([
 
 ], function() {
   return {
-    'SITE_NAME': 'OJBug',
+    'SITE_NAME': 'OJInf',
     /* Sidebar Navigation */
     'SIDEBAR_SEARCH': '在 {{site}} 上搜索',
     'SIDEBAR_HOME' : '首页',
@@ -12,6 +12,7 @@ define([
     'SIDEBAR_DISCUSS': '讨论',
     'SIDEBAR_JUDGE': '评测',
     'SIDEBAR_RANK': '排名',
+    'SIDEBAR_NAVIGATE': '导航',
     /* Sidebar Footer */
     'SIDEBAR_ABOUT': '关于',
     'SIDEBAR_HELP': '帮助',
@@ -62,12 +63,12 @@ define([
     /* Error */
     'ERROR_TITLE': '出错了',
     /* Site */
-    'SITE_NAME_TITLE': 'OJBug',
+    'SITE_NAME_TITLE': 'OJInf',
     /* Dialogs */
     'CARD_DONE': '好的',
     'CARD_DISMISS': '忽略',
     /* Help */
     'HELP_ABOUT_DESCRIPTION': 'CloudOJ 是一个即时在线评测平台。它基于 Node.js 构建，并且基于 BSD-3-Clause 协议开源。',
-    'HELP_ABOUT_REPO_ON_GITHUB': '在 GitHub 上查看项目'
+    'HELP_ABOUT_REPO_ON_GITHUB': '在 GitHub 上查看 OnWind/CloudOJ'
   };
 });
