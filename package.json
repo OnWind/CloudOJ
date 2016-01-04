@@ -1,6 +1,6 @@
 {
   "name": "cloudoj",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "An online judge",
   "main": "app.js",
   "private": true,
