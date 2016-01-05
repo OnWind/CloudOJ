@@ -1,8 +1,8 @@
 define([
-
-], function() {
+  '../config/config'
+], function(config) {
   return {
-    'SITE_NAME': 'OJInf',
+    'SITE_NAME': config.site.name,
     /* Sidebar Navigation */
     'SIDEBAR_SEARCH': '在 {{site}} 上搜索',
     'SIDEBAR_HOME' : '首页',
@@ -65,7 +65,7 @@ define([
     /* Error */
     'ERROR_TITLE': '出错了',
     /* Site */
-    'SITE_NAME_TITLE': 'OJInf',
+    'SITE_NAME_TITLE': config.site.name,
     /* Dialogs */
     'CARD_DONE': '好的',
     'CARD_DISMISS': '忽略',

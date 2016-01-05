@@ -31,7 +31,7 @@ define([
         templateUrl: "views/judge/index.html",
         controller: 'JudgeController',
         resolve: {
-          routes: function(){ return [{i18n_title: 'JUDGE'}]; }          
+          routes: function(){ return [{i18n_title: 'JUDGE'}]; }
         }
       })
       .when('/', {
@@ -41,7 +41,8 @@ define([
         templateUrl: "views/error/index.html",
         controller: "ErrorController",
         resolve: {
-          routes: function(){ return [{i18n_title: 'ERROR'}]; }
+          routes: function() { return [{i18n_title: 'ERROR'}]; },
+          error: function() { return "404"; }
         }
       })
       .otherwise({

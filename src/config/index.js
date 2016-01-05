@@ -1,7 +1,7 @@
 define([
   'app',
   './config'
-], function(app) {
+], function(app, config) {
   'use strict';
   app.config(["$mdThemingProvider", function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
@@ -11,4 +11,5 @@ define([
       .primaryPalette('blue')
       .accentPalette('amber');
   }]);
+  return app.constant('config', config);
 });
