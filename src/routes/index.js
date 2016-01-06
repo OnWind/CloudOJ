@@ -42,7 +42,7 @@ define([
         controller: "ErrorController",
         resolve: {
           routes: function() { return [{i18n_title: 'ERROR'}]; },
-          error: function() { return "404"; }
+          error: function() { return {code: 404}; }
         }
       })
       .otherwise({

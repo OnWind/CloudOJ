@@ -1,23 +1,22 @@
-md-toolbar
-  include ../navbar/index
-md-content(
-  flex
-  md-scroll-y
-  layout="row"
-  layout-wrap
-  layout-align="start"
-  layout-padding
-)
-  div(flex="33" flex-sm="50" flex-xs="100" layout="column")
-    md-card
-      md-card-title
-        md-card-title-text
-          span.md-headline CloudOJ
-          span.md-subhead v#{config.package.version}
-      md-card-content
-        p {{'HELP_ABOUT_DESCRIPTION' | translate}}
-      
-      md-card-actions(layout="column" layout-align="start")
-        md-button(ng-href="#{config.package.homepage}") {{'HELP_ABOUT_REPO_ON_GITHUB' | translate}}
+md-content(layout="column" flex md-scroll-y)
+  md-toolbar.md-whiteframe-1dp
+    include ../navbar/index
+  md-content(
+    layout="row"
+    layout-wrap
+    layout-align="start"
+    layout-padding
+  )
+    div(flex="33" flex-sm="50" flex-xs="100" layout="column")
+      md-card
+        md-card-title
+          md-card-title-text
+            span.md-headline CloudOJ
+            span.md-subhead v#{config.package.version}
+        md-card-content
+          p {{'HELP_ABOUT_DESCRIPTION' | translate}}
+        
+        md-card-actions(layout="column" layout-align="start")
+          md-button(ng-href="#{config.package.homepage}") {{'HELP_ABOUT_REPO_ON_GITHUB' | translate}}
 
-  
+    

@@ -64,6 +64,10 @@ define([
     'STATUS_TITLE': '状态',
     /* Error */
     'ERROR_TITLE': '出错了',
+    'ERROR_RETURN_HOME': '返回首页',
+    'ERROR_DESCRIPTION': '我们遇到了一点小问题',
+    'ERROR_DESCRIPTION_404': '没有找到这个页面',
+    'ERROR_CODE': '错误代码',
     /* Site */
     'SITE_NAME_TITLE': config.site.name,
     /* Dialogs */

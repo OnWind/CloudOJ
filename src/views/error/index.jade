@@ -1,5 +1,23 @@
-md-content(layout="column" flex)
+md-content(layout="column" flex md-scroll-y)
   md-toolbar.md-whiteframe-1dp
     include ../navbar/index
-  md-content
-    p Error!
+  md-content(
+    layout="row"
+    layout-wrap
+    layout-align="center"
+    layout-padding
+  )
+    div(flex="33" flex-sm="50" flex-xs="100" layout="column")
+      md-card
+        md-card-title
+          md-card-title-text
+            span.md-headline {{'ERROR_TITLE' | translate}}
+            span.md-subhead {{'ERROR_DESCRIPTION' | translate}}
+        md-card-content
+          p {{'ERROR_DESCRIPTION_' + error.code | translate}}
+          p {{'ERROR_CODE' | translate}} {{error.code}}
+        
+        md-card-actions(layout="column" layout-align="start")
+          md-button(ng-href="#/") {{'ERROR_RETURN_HOME' | translate}}
+
+    

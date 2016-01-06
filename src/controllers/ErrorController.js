@@ -3,8 +3,9 @@ define([
 ], function(app) {
   'use strict';
   return app.controller('ErrorController', [
-    "$scope",
-    function($scope) {
+    "$scope", "error",
+    function($scope, error) {
+      $scope.error = error;
     }
   ]);
 });
