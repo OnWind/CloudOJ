@@ -4,19 +4,7 @@ md-content(layout="column" flex md-scroll-y)
   md-content(
     layout="row"
     layout-wrap
-    layout-align="start"
+    layout-align="center"
     layout-padding
   )
-    div(flex="33" flex-sm="50" flex-xs="100" layout="column")
-      md-card
-        md-card-title
-          md-card-title-text
-            span.md-headline CloudOJ
-            span.md-subhead v#{config.package.version}
-        md-card-content
-          p {{'HELP_ABOUT_DESCRIPTION' | translate}}
-        
-        md-card-actions(layout="column" layout-align="start")
-          md-button(ng-href="#{config.package.homepage}") {{'HELP_ABOUT_REPO_ON_GITHUB' | translate}}
-
-    
+    div(flex="70" flex-xs="100" layout="column" ng-include="url")

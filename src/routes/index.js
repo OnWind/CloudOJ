@@ -13,11 +13,28 @@ define([
           routes: function() { return [{i18n_title: 'HOME'}]; }
         }
       })
-      .when('/help', {
+      .when('/help/', {
         templateUrl: "views/help/index.html",
         controller: "HelpController",
         resolve: {
           routes: function(){ return [{i18n_title: 'HELP'}]; }
+        }
+      })
+      .when('/help/:id', {
+        templateUrl: "views/help/index.html",
+        controller: "HelpController",
+        resolve: {
+          url: [
+            '$route',
+            function($route) {
+              return '/views/help/zh_cn/' + $route.current.params.id + '.html';
+            }
+          ],
+          routes: [
+            function() {
+              return [{i18n_title: 'HELP'}];
+            }
+          ]
         }
       })
       .when('/problem', {

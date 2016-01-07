@@ -4,9 +4,9 @@ define([
 ], function(app) {
   'use strict';
   return app.controller('HelpController', [
-    "$scope",
-    function($scope) {
-      $scope.message = "Help";
+    "$scope", "url",
+    function($scope, url) {
+      $scope.url = url;
     }
   ]);
 });

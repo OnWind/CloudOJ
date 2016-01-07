@@ -1,0 +1,10 @@
+md-card
+  md-card-title
+    md-card-title-text
+      span.md-headline 关于 CloudOJ
+      span.md-subhead v#{config.package.version}
+  md-card-content
+    p {{'HELP_ABOUT_DESCRIPTION' | translate}}
+
+  md-card-actions(layout="column" layout-align="start")
+  md-button(ng-href="#{config.package.homepage}") {{'HELP_ABOUT_REPO_ON_GITHUB' | translate}}
