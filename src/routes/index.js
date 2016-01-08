@@ -24,12 +24,6 @@ define([
         templateUrl: "views/help/index.html",
         controller: "HelpController",
         resolve: {
-          url: [
-            '$route',
-            function($route) {
-              return '/views/help/zh_cn/' + $route.current.params.id + '.html';
-            }
-          ],
           routes: [
             function() {
               return [{i18n_title: 'HELP'}];
