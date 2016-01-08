@@ -8,12 +8,23 @@ define([
     "config",
     function($scope, $rootScope, config) {
       $rootScope.config = config;
+      $rootScope.route = {
+        status: {
+          loading: true,
+          error: false
+        }
+      };
       $rootScope.$on('$routeChangeStart', function() {
-        $rootScope.route_loading = true;
+        $rootScope.route.status.loading = true;
       });
       $rootScope.$on('$routeChangeSuccess', function() {
-        $rootScope.route_loading = false;
+        $rootScope.route.status.loading = false;
+        $rootScope.route.status.error = false;
       });
+      $rootScope.$on('$routeChangeError', function() {
+        $rootScope.route.status.error = true;
+      });
+
     }
   ]);
 });

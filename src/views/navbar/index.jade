@@ -1,4 +1,5 @@
 div(ng-controller="NavbarController")
+  include loading
   div.md-toolbar-tools
     md-button.md-icon-button(
       ng-click="toggleSidenav('left')"
@@ -30,4 +31,3 @@ div(ng-controller="NavbarController")
     span(flex)
     md-button.md-icon-button(hide-gt-md)
       md-icon more_vert
-  include loading
