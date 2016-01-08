@@ -1,32 +1,36 @@
-div.md-toolbar-tools(ng-controller="NavbarController")
-  md-button.md-icon-button(
-    ng-click="toggleSidenav('left')"
+div(ng-controller="NavbarController")
+  div.md-toolbar-tools
+    md-button.md-icon-button(
+      ng-click="toggleSidenav('left')"
+    )
+      md-icon menu
+    h1.md-breadcrumb
+      div(ng-repeat="route in routes")
+        mixin breadcrumb
+          md-button(
+            ng-if="route.i18n_title"
+            ng-href="#/{{ route.href != undifined ? route.href : route.i18n_title | lowercase}}"
+          ) {{route.i18n_title + '_TITLE' | translate}}
+          md-button(
+            ng-if="route.title"
+            ng-href="#/{{ route.href }}"
+          ) {{route.title}}
+        div(ng-switch="routes.length - $index - 1")
+          div(ng-switch-when="0")
+            +breadcrumb
+          div(hide show-gt-xs ng-switch-when="1")
+            +breadcrumb
+            md-icon chevron_right
+          div(hide show-gt-sm ng-switch-when="2")
+            +breadcrumb
+            md-icon chevron_right
+          div(hide show-gt-md ng-switch-default)
+            +breadcrumb
+            md-icon chevron_right
+    span(flex)
+    md-button.md-icon-button(hide-gt-md)
+      md-icon more_vert
+  md-progress-linear.md-hue-1.oj-loading-bar(
+    md-mode="indeterminate"
+    ng-show="loading"
   )
-    md-icon menu
-  h1.md-breadcrumb
-    div(ng-repeat="route in routes")
-      mixin breadcrumb
-        md-button(
-          ng-if="route.i18n_title"
-          ng-href="#/{{ route.href != undifined ? route.href : route.i18n_title | lowercase}}"
-        ) {{route.i18n_title + '_TITLE' | translate}}
-        md-button(
-          ng-if="route.title"
-          ng-href="#/{{ route.href }}"
-        ) {{route.title}}
-      div(ng-switch="routes.length - $index - 1")
-        div(ng-switch-when="0")
-          +breadcrumb
-        div(hide show-gt-xs ng-switch-when="1")
-          +breadcrumb
-          md-icon chevron_right
-        div(hide show-gt-sm ng-switch-when="2")
-          +breadcrumb
-          md-icon chevron_right
-        div(hide show-gt-md ng-switch-default)
-          +breadcrumb
-          md-icon chevron_right
-  span(flex)
-  md-button.md-icon-button(hide-gt-md)
-    md-icon more_vert
-md-progress-linear.md-hue-1(md-mode="indeterminate")

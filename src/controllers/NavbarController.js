@@ -3,8 +3,9 @@ define([
 ], function(app) {
   'use strict';
   return app.controller('NavbarController', [
-    "$scope", "$mdSidenav", "$route",
-    function($scope, $mdSidenav, $route) {
+    "$scope", "$mdSidenav", "$route", "$rootScope",
+    function($scope, $mdSidenav, $route, $rootScope) {
+      $scope.loading = false;
       $scope.toggleSidenav = function() {
         $mdSidenav("left").toggle();
       };
@@ -15,6 +16,12 @@ define([
           i18n_title: 'SITE_NAME',
           href: ''
         });
+      });
+      $rootScope.$on('$routeChangeStart', function() {
+        $scope.loading = true;
+      });
+      $rootScope.$on('$routeChangeSuccess', function() {
+        $scope.loading = false;
       });
     }
   ]);
