@@ -17,12 +17,6 @@ define([
           href: ''
         });
       });
-      $rootScope.$on('$routeChangeStart', function() {
-        $scope.loading = true;
-      });
-      $rootScope.$on('$routeChangeSuccess', function() {
-        $scope.loading = false;
-      });
     }
   ]);
 });
