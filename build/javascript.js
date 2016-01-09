@@ -25,7 +25,7 @@ module.exports = function(config) {
         'src/app-bootstrap.js'
       ], { base: 'src' })
         .pipe(requirejsOptimize(config.requireConfig))
-
+        .pipe(uglify())
         .pipe(gulp.dest('public/'));
     });
   } else {
