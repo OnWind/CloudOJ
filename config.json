@@ -16,11 +16,6 @@
       "app": "app"
     },
     "baseUrl": "./src",
-    "name": "vender/almond/almond",
-    "include": ["app-bootstrap"],
-    "wrap": {
-      "startFile": "src/wrap/wrap.start",
-      "endFile": "src/wrap/wrap.end"
-    }
+    "insertRequire": ["app-bootstrap.js"]
   }
 }
