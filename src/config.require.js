@@ -3,6 +3,7 @@ require.config({
     paths: {
         "app": "app",
         "app-bootstrap": "app-bootstrap",
+        "config": "config",
         "angular": "static/angular/angular.min",
         "angular-route": "static/angular-route/angular-route.min",
         "angular-translate": "static/angular-translate/angular-translate.min",

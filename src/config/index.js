@@ -1,6 +1,6 @@
 define([
   'app',
-  './config'
+  'config'
 ], function(app, config) {
   'use strict';
   app.config(["$mdThemingProvider", function($mdThemingProvider) {

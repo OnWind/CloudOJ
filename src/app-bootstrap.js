@@ -9,7 +9,8 @@ define([
     './config/index'
 ], function(angular) {
     'use strict';
-    angular.element(document).ready(function() {
+    console.log("!!!");
+    return angular.element(document).ready(function() {
         angular.bootstrap(document, ['ojApp']);
     });
 });

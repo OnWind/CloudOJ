@@ -9,6 +9,7 @@ define([
     'angular-sanitize'
 ], function (angular) {
     'use strict';
+
     return angular.module("ojApp", [
         "ngRoute",
         "ngResource",

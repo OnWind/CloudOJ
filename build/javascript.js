@@ -4,15 +4,38 @@ module.exports = function(config) {
       livereload = require('gulp-livereload'),
       gulpif = require('gulp-if'),
       uglify = require('gulp-uglify'),
-      amdOptimize = require('gulp-amd-optimizer');
-  gulp.task('source:javascript', function(){
-    return gulp.src([
-      'src/**/*.js'
-    ], { base: 'src' })
-      .pipe(gulpif(!config.is_production, plumber()))
-      .pipe(gulpif(config.is_production, amdOptimize(config.amdConfig)))
-      .pipe(gulpif(config.is_production, uglify()))
-      .pipe(gulp.dest('public/'))
-      .pipe(gulpif(!config.is_production, livereload()));
-  });
+      concat = require('gulp-concat'),
+      requirejsOptimize = require('gulp-requirejs-optimize');
+  if(config.is_production) {
+    gulp.task('source:javascript',[
+      'source:javascript:requirejs',
+      'source:javascript:production'
+    ]);
+    gulp.task('source:javascript:production', function(){
+      return gulp.src([
+        'src/production/**/*.js',
+      ], { base: 'src' })
+        .pipe(uglify())
+        .pipe(gulp.dest('public/'));
+    });
+    gulp.task('source:javascript:requirejs',[
+      'dependence:build-almond'
+    ], function() {
+      return gulp.src([
+        'src/app-bootstrap.js'
+      ], { base: 'src' })
+        .pipe(requirejsOptimize(config.requireConfig))
+
+        .pipe(gulp.dest('public/'));
+    });
+  } else {
+    gulp.task('source:javascript', function(){
+      return gulp.src([
+        'src/**/*.js'
+      ], { base: 'src' })
+        .pipe(plumber())
+        .pipe(gulp.dest('public/'))
+        .pipe(livereload());
+    });
+  }
 };

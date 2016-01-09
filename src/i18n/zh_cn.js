@@ -1,5 +1,5 @@
 define([
-  '../config/config'
+  'config'
 ], function(config) {
   return {
     'SITE_NAME': config.site.name,
