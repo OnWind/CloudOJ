@@ -17,21 +17,22 @@ md-content(layout="column" flex)
           md-list(layout-padding)
             md-list-item.md-3-line(
               ng-repeat="message in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-              ng-href="#/"
+              ng-href="#/problem/1000"
             )
               div.problem-icon
-                span.md-display-1 1000
-                div(
-                  layout="row"
-                  layout-align="center center"
-                )
-                  span.md-body-2(
-                    flex="35"
-                  ) WA
-                  md-progress-linear.md-warn(
-                    flex
-                    md-mode="determinate"
-                    value="{{ $index * 10 }}")
+                span.md-display-1(hide show-gt-xs) 1000
+
               div.md-list-item-text
-                h3 A+B 问题
+                h3 Cube - 别人的世界
                 p 分类 简单算法 | 提交 200/500 {{ 200/500*100 | number : 2 }}%
+              div(
+                flex="20"
+                layout="column"
+                layout-align="start end"
+                layout-wrap
+              )
+                span.md-body-2 WA
+                md-progress-linear.md-warn(
+                  flex
+                  md-mode="determinate"
+                  value="{{ $index * 10 }}")
