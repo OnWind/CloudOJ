@@ -23,6 +23,8 @@
     "tests"
   ],
   "dependencies": {
+  },
+  "devDependencies": {
     "angular": "~1.4.x",
     "angular-animate": "~1.4.x",
     "angular-aria": "~1.4.x",
