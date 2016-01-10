@@ -1,11 +1,7 @@
 language: node_js
 node_js:
-  - latest
-  - stable
   - "5.4"
-  - "5.3"
   - "4.2"
-  - "4.1"
 before_script:
   - |
       npm install -g gulp requirejs
