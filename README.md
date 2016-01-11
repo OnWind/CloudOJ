@@ -15,7 +15,7 @@ BSD 3-Clause "New" or "Revised" license
 Change site name in `src/i18n/<region>.js` `src/config/config.js`
 and `config.js`
 
-## Deploy
+## Production
 
     git clone https://github.com/OnWind/CloudOJ && cd CloudOJ
     npm install
