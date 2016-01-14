@@ -4,7 +4,10 @@ define([
   'use strict';
   return {
     site: {
-      name: "OJInf"
+      name: "<%= config.site.name %>"
+    },
+    angulartics: {
+      module: "<%= config.angulartics.name[config.angulartics.module] %>"
     }
   };
 });

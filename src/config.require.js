@@ -11,7 +11,9 @@ require.config({
         "angular-aria": "static/angular-aria/angular-aria.min",
         "angular-animate": "static/angular-animate/angular-animate.min",
         "angular-material": "static/angular-material/angular-material.min",
-        "angular-sanitize": "static/angular-sanitize/angular-sanitize.min"
+        "angular-sanitize": "static/angular-sanitize/angular-sanitize.min",
+        "angulartics": "static/angulartics/dist/angulartics.min",
+        "angulartics-module": "<%=config.angulartics.paths.development[config.angulartics.module] %>"
     },
     shim: {
         "angular": {
@@ -44,6 +46,14 @@ require.config({
         "angular-sanitize": {
             deps: ['angular'],
             exports: "angular-sanitize"
+        },
+        "angulartics": {
+            deps: ['angular'],
+            exports: "angulartics"
+        },
+        "angulartics-module": {
+            deps: ['angular'],
+            exports: 'angulartics-module'
         }
     },
     deps: ["app-bootstrap"]

@@ -7,7 +7,9 @@ require.config({
         "angular-aria": "//cdn.bootcss.com/angular.js/1.4.8/angular-aria.min",
         "angular-animate": "//cdn.bootcss.com/angular.js/1.4.8/angular-animate.min",
         "angular-material": "//cdn.bootcss.com/angular-material/1.0.1/angular-material.min",
-        "angular-sanitize": "//cdn.bootcss.com/angular.js/1.4.8/angular-sanitize.min"
+        "angular-sanitize": "//cdn.bootcss.com/angular.js/1.4.8/angular-sanitize.min",
+        "angulartics": "//cdn.bootcss.com/angulartics/1.0.3/angulartics.min",
+        "angulartics-module": "<%=config.angulartics.paths.production[config.angulartics.module] %>"
     },
     shim: {
         "angular": {
@@ -40,6 +42,14 @@ require.config({
         "angular-sanitize": {
             deps: ['angular'],
             exports: "angular-sanitize"
+        },
+        "angulartics": {
+            deps: ['angular'],
+            exports: "angulartics"
+        },
+        "angulartics-module": {
+            deps: ['angular'],
+            exports: 'angulartics-module'
         }
     }
 });

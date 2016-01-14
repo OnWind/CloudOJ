@@ -1,13 +1,16 @@
 define([
     'angular',
+    'config',
     'angular-route',
     'angular-translate',
     'angular-resource',
     'angular-animate',
     'angular-aria',
     'angular-material',
-    'angular-sanitize'
-], function (angular) {
+    'angular-sanitize',
+    'angulartics',
+    'angulartics-module'
+], function (angular, config) {
     'use strict';
 
     return angular.module("ojApp", [
@@ -17,6 +20,8 @@ define([
         "ngAnimate",
         "ngMaterial",
         "ngSanitize",
-        "pascalprecht.translate"
+        "pascalprecht.translate",
+        "angulartics",
+        "angulartics." + config.angulartics.module
     ]);
 });

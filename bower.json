@@ -22,8 +22,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "angular": "~1.4.x",
     "angular-animate": "~1.4.x",
@@ -34,6 +33,8 @@
     "angular-sanitize": "~1.4.x",
     "angular-translate": "~2.8.x",
     "requirejs": "~2.1.x",
-    "material-design-icons": "~2.1.x"
+    "material-design-icons": "~2.1.x",
+    "angulartics-google-analytics": "~0.1.4",
+    "angulartics": "~1.0.3"
   }
 }

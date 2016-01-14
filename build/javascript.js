@@ -5,6 +5,7 @@ module.exports = function(config) {
       gulpif = require('gulp-if'),
       uglify = require('gulp-uglify'),
       concat = require('gulp-concat'),
+      template = require('gulp-template'),
       requirejsOptimize = require('gulp-requirejs-optimize');
   if(config.is_production) {
     gulp.task('source:javascript',[
@@ -15,16 +16,16 @@ module.exports = function(config) {
       return gulp.src([
         'src/production/**/*.js',
       ], { base: 'src' })
+        .pipe(template({config: config}))
         .pipe(uglify())
         .pipe(gulp.dest('public/'));
     });
-    gulp.task('source:javascript:requirejs',[
-      'dependence:build-almond'
-    ], function() {
+    gulp.task('source:javascript:requirejs', function() {
       return gulp.src([
         'src/app-bootstrap.js'
       ], { base: 'src' })
         .pipe(requirejsOptimize(config.requireConfig))
+        .pipe(template({config: config}))
         .pipe(uglify())
         .pipe(gulp.dest('public/'));
     });
@@ -34,6 +35,7 @@ module.exports = function(config) {
         'src/**/*.js'
       ], { base: 'src' })
         .pipe(plumber())
+        .pipe(template({config: config}))
         .pipe(gulp.dest('public/'))
         .pipe(livereload());
     });

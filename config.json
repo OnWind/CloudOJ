@@ -1,5 +1,7 @@
 {
-  "SITE_NAME": "OJInf",
+  "site": {
+    "name": "OJInf"
+  },
   "requireConfig": {
     "optimize": "none",
     "paths": {
@@ -11,11 +13,28 @@
       "angular-aria": "empty:",
       "angular-material": "empty:",
       "angular-sanitize": "empty:",
+      "angulartics": "empty:",
+      "angulartics-module": "empty:",
       "app-bootstrap": "app-bootstrap",
       "config": "config",
       "app": "app"
     },
     "baseUrl": "./src",
     "insertRequire": ["app-bootstrap.js"]
+  },
+  "angulartics": {
+    "id": "UA-52525161-4",
+    "module": "ga",
+    "paths": {
+      "development": {
+        "ga": "static/angulartics-google-analytics/dist/angulartics-google-analytics.min"
+      },
+      "production": {
+        "ga": "//cdn.bootcss.com/angulartics-google-analytics/0.1.4/angulartics-google-analytics.min"
+      }
+    },
+    "name": {
+      "ga": "google.analytics"
+    }
   }
 }

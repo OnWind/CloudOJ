@@ -18,8 +18,8 @@ html(lang="en")
     meta(name="renderer" content="webkit")
     meta(name="robots" content="index,follow")
     base(href="/")
-    title(translate="SITE_NAME") #{config.SITE_NAME}
-    meta(name="keywords" content="#{config.SITE_NAME}, Online Judge, OnWind, Programming")
+    title(translate="SITE_NAME") #{config.site.name}
+    meta(name="keywords" content="#{config.site.name}, Online Judge, OnWind, Programming")
 
     
   body.ng-cloak(layout="row" ng-controller="AppController" md-theme="default")
@@ -38,3 +38,5 @@ html(lang="en")
     
     div(layout="column" flex ng-view)
       p In progress...
+      
+    include views/analytics/index

@@ -31,22 +31,16 @@ gulp.task('dependence:build-js', function() {
     'bower_components/angular-resource/*.min.js',
     'bower_components/angular-route/*.min.js',
     'bower_components/angular-sanitize/*.min.js',
-    'bower_components/angular-translate/*.min.js'
+    'bower_components/angular-translate/*.min.js',
+    'bower_components/angulartics/dist/*.min.js',
+    'bower_components/angulartics-google-analytics/dist/*.min.js'
   ], { base: 'bower_components' })
     .pipe(gulp.dest('public/static'));
-});
-
-gulp.task('dependence:build-almond', function() {
-  return gulp.src([
-    'node_modules/almond/*.js'
-  ], { base: 'node_modules' })
-    .pipe(gulp.dest('src/vender/'));
 });
 
 gulp.task('dependence', [
   'dependence:build-js',
   'dependence:build-requirejs',
   'dependence:build-css',
-  'dependence:build-font',
-  'dependence:build-almond'
+  'dependence:build-font'
 ]);
