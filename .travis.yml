@@ -4,7 +4,7 @@ node_js:
   - "4.2"
 before_script:
   - |
-      npm install -g gulp requirejs
+      npm install -g gulp
       if [ "$TEST_ENVIRONMENT" = development ]; then
         npm install -g bower
         bower install

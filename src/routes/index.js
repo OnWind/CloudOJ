@@ -14,11 +14,7 @@ define([
         }
       })
       .when('/help/', {
-        templateUrl: "views/help/index.html",
-        controller: "HelpController",
-        resolve: {
-          routes: function(){ return [{i18n_title: 'HELP'}]; }
-        }
+        redirectTo: "/help/index"
       })
       .when('/help/:id', {
         templateUrl: "views/help/index.html",
@@ -27,6 +23,15 @@ define([
           routes: [
             function() {
               return [{i18n_title: 'HELP'}];
+            }
+          ],
+          content: [
+            "$sce", "$templateRequest", "$route",
+            function($sce, $templateRequest, $route) {
+              var templateUrl = $sce.getTrustedResourceUrl(
+                '/views/help/zh_cn/' + ($route.current.params.id || 'index') + '.html'
+              );
+              return $templateRequest(templateUrl);
             }
           ]
         }

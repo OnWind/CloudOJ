@@ -1,14 +1,18 @@
 
 define([
-  'app'
-], function(app) {
+  'app',
+  'angular'
+], function(app, angular) {
   'use strict';
   return app.controller('HelpController', [
-    "$scope", "$routeParams", "routes",
-    function($scope, $routeParams, routes) {
-      $scope.url = '/views/help/zh_cn/' + ($routeParams.id || 'index') + '.html';
+    "$scope", "$routeParams", "routes", "content", "$compile",
+    function($scope, $routeParams, routes, content, $compile) {
+      console.log(this);
+      var contentObj = angular.element(document.getElementById("content"));
+      contentObj.html(content);
+      $compile(contentObj.contents())($scope);
       routes.push({
-        title: '关于',
+        title: document.getElementById("title").innerText,
         href: 'help/' + ($routeParams.id || 'index')
       });
     }

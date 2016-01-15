@@ -72,9 +72,6 @@ define([
     'SITE_NAME_TITLE': config.site.name,
     /* Dialogs */
     'CARD_DONE': '好的',
-    'CARD_DISMISS': '忽略',
-    /* Help */
-    'HELP_ABOUT_DESCRIPTION': 'CloudOJ 是一个即时在线评测平台。它基于 Node.js 构建，并且基于 BSD-3-Clause 协议开源。',
-    'HELP_ABOUT_REPO_ON_GITHUB': '在 GitHub 上查看 OnWind/CloudOJ'
+    'CARD_DISMISS': '忽略'
   };
 });

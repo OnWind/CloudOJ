@@ -1,0 +1,11 @@
+span#title(hidden)关于
+md-card-title
+  md-card-title-text
+    span.md-headline 关于 CloudOJ
+    span.md-subhead v#{config.package.version}
+md-card-content
+  p #{config.site.name} 基于 CloudOJ 构建。
+  p CloudOJ 是一个即时在线评测平台。它基于 Node.js 构建，并且基于 BSD-3-Clause 协议开源。
+
+md-card-actions(layout="column" layout-align="start")
+  md-button(ng-href="#{config.package.homepage}") 在 GitHub 上查看 OnWind/CloudOJ

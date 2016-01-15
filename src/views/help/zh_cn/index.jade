@@ -1,10 +1,10 @@
-md-card
-  md-card-title
-    md-card-title-text
-      span.md-headline 关于 CloudOJ
-      span.md-subhead v#{config.package.version}
-  md-card-content
-    p {{'HELP_ABOUT_DESCRIPTION' | translate}}
-
-  md-card-actions(layout="column" layout-align="start")
-  md-button(ng-href="#{config.package.homepage}") {{'HELP_ABOUT_REPO_ON_GITHUB' | translate}}
+span#title(hidden)首页
+md-card-title
+  md-card-title-text
+    span.md-headline 帮助
+    span.md-subhead  #{config.site.name} 帮助中心
+md-card-content
+  p 欢迎来到帮助中心。点击下面的按钮可以跳转到相应帮助。
+md-card-actions(layout="column" layout-align="start")
+  md-button(ng-href="#help/about") 关于
+  md-button(ng-href="#help/feedback") 反馈
