@@ -7,18 +7,21 @@ md-content.background(layout="column" flex)
     md-scroll-y
     layout-align="start center"
   )
-    h1.title.md-headline OJInf | 创造无限可能
-    img.title(src="/images/infinite.svg" width="256px")
-    div(layout="row" layout-align="center" layout-wrap)
-      md-button.md-raised.md-primary.block(ng-href="#/problem") 
+    div
+      h1.title.md-display-4
+        span OJ
+        span.img-home-inf
+        span = 创造
+    div.nav-home.md-whiteframe-z2(layout="row" layout-align="center" layout-wrap)
+      md-button.md-primary.md-hue-2.block(ng-href="#/problem") 
         md-icon code
         span {{'SIDEBAR_PROBLEM'|translate}}
-      md-button.md-raised.md-primary.block(ng-href="#/problem") 
+      md-button.md-primary.md-hue-2.block(ng-href="#/problem") 
         md-icon today
         span {{'SIDEBAR_CONTEST'|translate}}
-      md-button.md-raised.block(ng-href="#/user/register") 
+      md-button.block(ng-href="#/user/register") 
         md-icon open_in_new
         span {{'SIDEBAR_REGISTER'|translate}}
-      md-button.md-raised.block(ng-href="#/user/login") 
+      md-button.block(ng-href="#/user/login") 
         md-icon exit_to_app
         span {{'SIDEBAR_LOGIN'|translate}}
