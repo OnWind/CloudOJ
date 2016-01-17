@@ -8,10 +8,11 @@ md-content.background(layout="column" flex)
     layout-align="start center"
   )
     div
-      h1.title.md-display-4
+      h1.title.md-display-4(layout="row" layout-xs="column" layout-align="start center")
         span OJ
         span.img-home-inf
-        span = 创造
+        span.md-display-2 =
+        span 创造
     div.nav-home.md-whiteframe-z2(layout="row" layout-align="center" layout-wrap)
       md-button.md-primary.md-hue-2.block(ng-href="#/problem") 
         md-icon code
@@ -19,9 +20,6 @@ md-content.background(layout="column" flex)
       md-button.md-primary.md-hue-2.block(ng-href="#/problem") 
         md-icon today
         span {{'SIDEBAR_CONTEST'|translate}}
-      md-button.block(ng-href="#/user/register") 
-        md-icon open_in_new
-        span {{'SIDEBAR_REGISTER'|translate}}
       md-button.block(ng-href="#/user/login") 
-        md-icon exit_to_app
-        span {{'SIDEBAR_LOGIN'|translate}}
+        md-icon open_in_new
+        span {{'SIDEBAR_REGISTER'|translate}}/{{'SIDEBAR_LOGIN'|translate}}
