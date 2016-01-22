@@ -4,7 +4,8 @@ module.exports = function(config) {
   var less = require('gulp-less'),
       plumber = require('gulp-plumber'),
       livereload = require('gulp-livereload'),
-      gulpif = require('gulp-if');
+      gulpif = require('gulp-if'),
+      notify = require("gulp-notify");
   var LessPluginCleanCSS = require('less-plugin-clean-css'),
       cleanCSSPlugin = new LessPluginCleanCSS({advanced: true});
   var LessPluginAutoPrefix = require('less-plugin-autoprefix'),
@@ -12,7 +13,9 @@ module.exports = function(config) {
 
   gulp.task('source:less', function() {
     return gulp.src('src/**/*.less')
-      .pipe(gulpif(!config.is_production, plumber()))
+      .pipe(gulpif(!config.is_production, plumber({
+        errorHandler: notify.onError("Error while building Less")
+      })))
       .pipe(gulpif(
         config.is_production,
         less({
@@ -25,5 +28,6 @@ module.exports = function(config) {
       ))
       .pipe(gulp.dest('public/'))
       .pipe(gulpif(!config.is_production, livereload()));
+      //.pipe(gulpif(!config.is_production, notify("Success in building Less")));
   });
 };

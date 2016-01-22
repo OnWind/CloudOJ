@@ -3,12 +3,15 @@ module.exports = function(config) {
   var jade = require('gulp-jade'),
       plumber = require('gulp-plumber'),
       livereload = require('gulp-livereload'),
-      gulpif = require('gulp-if');
+      gulpif = require('gulp-if'),
+      notify = require("gulp-notify");
   gulp.task('source:jade', function(){
     return gulp.src([
       'src/**/*.jade'
     ], { base: 'src' })
-      .pipe(gulpif(!config.is_production, plumber()))
+      .pipe(gulpif(!config.is_production, plumber({
+        errorHandler: notify.onError("Error while building Jade")
+      })))
       .pipe(jade({
         locals: {
           config: config
@@ -16,5 +19,6 @@ module.exports = function(config) {
       }))
       .pipe(gulp.dest('public/'))
       .pipe(gulpif(!config.is_production, livereload()));
+    //  .pipe(gulpif(!config.is_production, notify("Success in building Jade")));
   });
 };

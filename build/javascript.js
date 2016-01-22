@@ -6,7 +6,8 @@ module.exports = function(config) {
       uglify = require('gulp-uglify'),
       concat = require('gulp-concat'),
       template = require('gulp-template'),
-      requirejsOptimize = require('gulp-requirejs-optimize');
+      requirejsOptimize = require('gulp-requirejs-optimize'),
+      notify = require("gulp-notify");
   if(config.is_production) {
     gulp.task('source:javascript',[
       'source:javascript:requirejs',
@@ -34,10 +35,13 @@ module.exports = function(config) {
       return gulp.src([
         'src/**/*.js'
       ], { base: 'src' })
-        .pipe(plumber())
+        .pipe(plumber({
+          errorHandler: notify.onError("Error while building Javascript")
+        }))
         .pipe(template({config: config}))
         .pipe(gulp.dest('public/'))
         .pipe(livereload());
+        //.pipe(notify("Success in building Javascript"));
     });
   }
 };

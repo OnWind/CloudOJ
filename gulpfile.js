@@ -43,7 +43,7 @@ gulp.task('development:server', function() {
         'DEBUG': 'cloudoj:*',
         'NODE_ENV': 'development'
     },
-    stdout: false
+    stdout: true
   });
 });
 
